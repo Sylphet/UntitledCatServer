@@ -2,6 +2,7 @@
 	icon_state = "floor"
 	floor_tile = /obj/item/stack/tile/iron/base
 	rust_resistance = RUST_RESISTANCE_BASIC
+	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/iron/broken_states()
 	return list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")

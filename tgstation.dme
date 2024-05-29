@@ -1088,6 +1088,7 @@
 #include "code\datums\components\fishing_spot.dm"
 #include "code\datums\components\focused_attacker.dm"
 #include "code\datums\components\food_storage.dm"
+#include "code\datums\components\footstep_changer.dm"
 #include "code\datums\components\force_move.dm"
 #include "code\datums\components\fov_handler.dm"
 #include "code\datums\components\fullauto.dm"

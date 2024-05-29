@@ -24,6 +24,7 @@
 	var/static/list/lighttile_designs
 	///used for light floors that cycle colours
 	var/cycle = FALSE
+	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/light/broken_states()
 	return list("light_broken")
