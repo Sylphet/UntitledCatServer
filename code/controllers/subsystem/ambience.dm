@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(ambience)
 	wait = 1 SECONDS
 	///Assoc list of listening client - next ambience time
 	var/list/ambience_listening_clients = list()
+	///Assoc list of client - client.mob's area during the last fire.
 	var/list/client_old_areas = list()
 	///Cache for sanic speed :D
 	var/list/currentrun = list()
@@ -49,11 +50,16 @@ SUBSYSTEM_DEF(ambience)
 			return
 
 ///Attempts to play an ambient sound to a mob, returning the cooldown in deciseconds
-/area/proc/play_ambience(mob/M, sound/override_sound, volume = 27)
+/area/proc/play_ambience(mob/M, sound/override_sound, volume)
+	var/turf/T = get_turf(M)
 	var/sound/new_sound = override_sound || pick(ambientsounds)
-	new_sound = sound(new_sound, repeat = 0, wait = 0, volume = volume, channel = CHANNEL_AMBIENCE)
-	SEND_SOUND(M, new_sound)
-
+	new_sound = sound(new_sound, channel = CHANNEL_AMBIENCE)
+	M.playsound_local(T,
+		new_sound,
+		volume ? volume : 27,
+		TRUE,
+		channel = CHANNEL_AMBIENCE
+	)
 	return rand(min_ambience_cooldown, max_ambience_cooldown)
 
 /datum/controller/subsystem/ambience/proc/remove_ambience_client(client/to_remove)

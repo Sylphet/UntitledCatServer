@@ -8,6 +8,12 @@
 	ambient_buzz = 'sound/ambience/source_corridor2.ogg'
 	ambient_buzz_vol = 20
 
+/area/station/maintenance/play_ambience(mob/M, sound/override_sound, volume)
+	if(!M.has_light_nearby() && prob(0.5))
+		return ..(M, pick(minecraft_cave_noises))
+	return ..()
+
+
 /*
 * Departmental Maintenance
 */

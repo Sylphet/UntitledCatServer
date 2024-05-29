@@ -42,11 +42,13 @@
 	name = "\improper Secret Base"
 	ambience_index = AMBIENCE_DANGER
 	ambient_buzz = 'sound/ambience/magma.ogg'
+	ambient_buzz = 'sound/ambience/magma.ogg'
 
 /area/ruin/unpowered/cultaltar
 	name = "\improper Cult Altar"
 	area_flags = CULT_PERMITTED
 	ambience_index = AMBIENCE_SPOOKY
+	ambient_buzz = 'sound/ambience/magma.ogg'
 
 //Syndicate lavaland base
 
