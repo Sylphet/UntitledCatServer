@@ -86,6 +86,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 26)
 		return
 	area.lightswitch = status
 	area.update_appearance()
+	play_click_sound(SFX_BUTTON)
 
 	for(var/obj/machinery/light_switch/light_switch as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/light_switch))
 		if(light_switch.area != area)

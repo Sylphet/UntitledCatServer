@@ -298,6 +298,7 @@
 	if(buildstage != FIRE_ALARM_BUILD_SECURED)
 		return ..()
 	add_fingerprint(user)
+	play_click_sound(SFX_BUTTON)
 	reset(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 

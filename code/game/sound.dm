@@ -207,7 +207,10 @@
 		return soundin
 	switch(soundin)
 		if(SFX_SHATTER)
-			soundin = pick('sound/effects/glassbr1.ogg','sound/effects/glassbr2.ogg','sound/effects/glassbr3.ogg')
+			soundin = pick(list('sound/effects/glassbr1.ogg',
+								'sound/effects/glassbr2.ogg',
+								'sound/effects/glassbr3.ogg',
+			))
 		if(SFX_EXPLOSION)
 			soundin = pick('sound/effects/explosion1.ogg','sound/effects/explosion2.ogg')
 		if(SFX_EXPLOSION_CREAKING)
@@ -452,4 +455,12 @@
 				'sound/items/rattle2.ogg',
 				'sound/items/rattle3.ogg',
 			)
+		if(SFX_KEYSTROKE)
+			soundin = pick('sound/machines/keyboard/keypress1.ogg','sound/machines/keyboard/keypress2.ogg','sound/machines/keyboard/keypress3.ogg','sound/machines/keyboard/keypress4.ogg')
+		if(SFX_KEYBOARD)
+			soundin = pick('sound/machines/keyboard/keystroke1.ogg','sound/machines/keyboard/keystroke2.ogg','sound/machines/keyboard/keystroke3.ogg','sound/machines/keyboard/keystroke4.ogg')
+		if(SFX_BUTTON)
+			soundin = pick('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg')
+		if(SFX_SWITCH)	//stolen from nsv
+			soundin = pick('sound/machines/switch1.ogg','sound/machines/switch2.ogg','sound/machines/switch3.ogg')
 	return soundin

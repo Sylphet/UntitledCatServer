@@ -136,6 +136,12 @@
 	var/market_verb = "Customer"
 	var/payment_department = ACCOUNT_ENG
 
+	var/clickvol = 40	// sound volume played on succesful click
+	var/next_clicksound = 0	// value to compare with world.time for whether to play clicksound according to CLICKSOUND_INTERVAL
+	var/clicksound	// sound played on succesful interface use by a carbon lifeform
+
+	// For storing and overriding ui id
+	var/tgui_id // ID of TGUI interface
 	///Is this machine currently in the atmos machinery queue?
 	var/atmos_processing = FALSE
 	/// world.time of last use by [/mob/living]
@@ -676,6 +682,7 @@
 	if(HAS_AI_ACCESS(usr) && !GLOB.cameranet.checkTurfVis(get_turf(src))) //We check if they're an AI specifically here, so borgs can still access off-camera stuff.
 		to_chat(usr, span_warning("You can no longer connect to this device!"))
 		return FALSE
+	play_click_sound()
 	return ..()
 
 /obj/machinery/Topic(href, href_list)
@@ -1198,4 +1205,13 @@
 
 /// Called if this machine is supposed to be a sabotage machine objective.
 /obj/machinery/proc/add_as_sabotage_target()
+	return
+
+/obj/machinery/proc/play_click_sound(var/custom_clicksound)
+	if((custom_clicksound||clicksound) && world.time > next_clicksound)
+		next_clicksound = world.time + CLICKSOUND_INTERVAL
+		if(custom_clicksound)
+			playsound(src, custom_clicksound, clickvol)
+		else if(clicksound)
+			playsound(src, clicksound, clickvol)
 	return
