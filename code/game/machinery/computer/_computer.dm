@@ -8,6 +8,7 @@
 	armor_type = /datum/armor/machinery_computer
 	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON|INTERACT_MACHINE_REQUIRES_LITERACY
 	/// How bright we are when turned on.
+	clicksound = SFX_KEYBOARD
 	var/brightness_on = 1
 	/// Icon_state of the keyboard overlay.
 	var/icon_keyboard = "generic_key"
@@ -23,6 +24,7 @@
 /datum/armor/machinery_computer
 	fire = 40
 	acid = 20
+
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()

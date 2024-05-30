@@ -5,6 +5,7 @@
 	icon_state = "regular_hull"
 	initial_gas_mix = AIRLESS_ATMOS
 	temperature = TCMB
+	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/engine/hull/ceiling
 	name = "shuttle ceiling plating"

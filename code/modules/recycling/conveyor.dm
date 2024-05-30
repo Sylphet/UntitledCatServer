@@ -447,7 +447,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 /obj/machinery/conveyor_switch/proc/on_user_activation(mob/user, direction)
 	add_fingerprint(user)
-	update_position(direction)
+	update_position()
 	update_appearance()
 	update_linked_conveyors()
 	update_linked_switches()

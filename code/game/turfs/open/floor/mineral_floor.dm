@@ -16,6 +16,7 @@
 	rust_resistance = RUST_RESISTANCE_BASIC
 	var/list/icons
 	tiled_dirt = FALSE
+	footstep = FOOTSTEP_PLATING
 
 
 

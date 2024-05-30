@@ -38,6 +38,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	overlay_speaker_active = null
 	overlay_mic_idle = null
 	overlay_mic_active = null
+	var/radiosound = 'sound/effects/common.ogg'
 
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!"))
@@ -98,6 +99,11 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	return ..()
 
 /// Grants all the languages this headset allows the mob to understand via installed chips.
+/obj/item/radio/headset/talk_into(mob/living/M, message, channel, list/spans, datum/language/language, list/message_mods, direct = TRUE)
+	if(radiosound && listening)
+		playsound(M, radiosound, rand(20, 30), 0, 0, SOUND_FALLOFF_EXPONENT)
+	. = ..()
+
 /obj/item/radio/headset/proc/grant_headset_languages(mob/grant_to)
 	for(var/language in language_list)
 		grant_to.grant_language(language, language_flags = UNDERSTOOD_LANGUAGE, source = LANGUAGE_RADIOKEY)
@@ -117,6 +123,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		user.remove_language(language, language_flags = UNDERSTOOD_LANGUAGE, source = LANGUAGE_RADIOKEY)
 
 /obj/item/radio/headset/syndicate //disguised to look like a normal headset for stealth ops
+	radiosound = 'sound/effects/syndie.ogg'
 
 /obj/item/radio/headset/syndicate/Initialize(mapload)
 	. = ..()
@@ -145,6 +152,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "sec_headset"
 	worn_icon_state = "sec_headset"
 	keyslot = /obj/item/encryptionkey/headset_sec
+	radiosound = 'sound/effects/security.ogg'
 
 /obj/item/radio/headset/headset_sec/alt
 	name = "security bowman headset"

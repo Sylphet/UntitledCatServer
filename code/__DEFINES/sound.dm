@@ -172,3 +172,7 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 #define SFX_SEAR "sear"
 #define SFX_REEL "reel"
 #define SFX_RATTLE "rattle"
+#define SFX_KEYSTROKE "keystroke"
+#define SFX_KEYBOARD "keyboard"
+#define SFX_BUTTON "button"
+#define SFX_SWITCH "switch"

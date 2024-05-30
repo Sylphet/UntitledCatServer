@@ -40,3 +40,10 @@
 #define COMSIG_TURF_RESET_ELEVATION "turf_reset_elevation"
 	#define ELEVATION_CURRENT_PIXEL_SHIFT 1
 	#define ELEVATION_MAX_PIXEL_SHIFT 2
+
+// ~footstep changer component
+///from base of datum/component/footstep_changer/proc/is_footstep_changed(): (turf/open/source, datum/component/footstep_changer)
+#define COMSIG_FOOTSTEP_CHANGER_IS_FOOTSTEP_CHANGED "footstep_changer_is_footstep_changed"
+///from base of datum/component/footstep_changer/proc/clear_footstep(): (turf/open/source)
+#define COMSIG_FOOTSTEP_CHANGER_CLEAR_FOOTSTEP "footstep_changer_clear_footstep"
+
