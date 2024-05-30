@@ -194,3 +194,8 @@
 	var/active_typing_indicator
 	///the icon currently used for the thinking indicator's bubble
 	var/active_thinking_indicator
+
+	///Whether the mob is pixel shifted or not
+	var/is_shifted
+	//If we are in the shifting setting.
+	var/shifting
