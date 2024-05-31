@@ -4100,6 +4100,12 @@
 /obj/structure/closet/bombcloset,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/lesser)
+"buD" = (
+/obj/structure/window/reinforced/fulltile/ec_glass{
+	id = s
+	},
+/turf/open/floor/plating,
+/area/station/hallway/primary/central)
 "buE" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/window/spawner/directional/west,
@@ -47465,11 +47471,14 @@
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "qXa" = (
-/obj/machinery/firealarm/directional/south,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/machinery/button/ec_glass{
+	id = "bridge_test";
+	pixel_y = -28
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "qXb" = (
@@ -55231,7 +55240,9 @@
 /turf/closed/wall,
 /area/station/security/checkpoint/engineering)
 "tKN" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile/ec_glass{
+	id = "bridge_test"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary/central)
 "tKR" = (
@@ -97897,7 +97908,7 @@ moV
 wEG
 tmK
 qBC
-tKN
+buD
 aaf
 aaf
 aaf
