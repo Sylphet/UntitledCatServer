@@ -8,7 +8,6 @@
 #define FOOTSTEP_LAVA "lava"
 #define FOOTSTEP_MEAT "meat"
 #define FOOTSTEP_CATWALK "catwalk"
-#define FOOTSTEP_ROOTS "roots"
 //barefoot sounds
 #define FOOTSTEP_WOOD_BAREFOOT "woodbarefoot"
 #define FOOTSTEP_WOOD_CLAW "woodclaw"
@@ -110,10 +109,6 @@ GLOBAL_LIST_INIT(footstep, list(
 		'sound/effects/footstep/ms13catwalk2.ogg',
 		'sound/effects/footstep/ms13catwalk3.ogg',
 		'sound/effects/footstep/ms13catwalk4.ogg'), 24, 1),
-	FOOTSTEP_ROOTS = list(list(
-		'sound/effects/footstep/roots1.ogg',
-		'sound/effects/footstep/roots2.ogg',
-		'sound/effects/footstep/roots3.ogg'), 75, 0),
 ))
 
 //bare footsteps lists
