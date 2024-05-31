@@ -42,9 +42,6 @@
 	var/inform_tamer = FALSE
 	atom_parent.balloon_alert(attacker, "fed")
 	var/modified_tame_chance = current_tame_chance
-	if(HAS_TRAIT(attacker, TRAIT_SETTLER))
-		modified_tame_chance += 50
-		inform_tamer = TRUE
 	if(unique || !already_friends(attacker))
 		if(prob(modified_tame_chance)) //note: lack of feedback message is deliberate, keep them guessing unless they're an expert!
 			on_tame(source, attacker, food, inform_tamer)
@@ -70,9 +67,6 @@
 		INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living, befriend), tamer)
 		if(inform_tamer)
 			source.balloon_alert(tamer, "tamed")
-
-	if(HAS_TRAIT(tamer, TRAIT_SETTLER))
-		INVOKE_ASYNC(src, PROC_REF(rename_pet), source, tamer)
 	if(unique)
 		qdel(src)
 	else

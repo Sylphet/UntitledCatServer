@@ -1,6 +1,6 @@
 /datum/quirk/extrovert
 	name = "Extrovert"
-	desc = "You are energized by talking to others, and enjoy spending your free time in the bar."
+	desc = "You are energized by talking to others."
 	icon = FA_ICON_USERS
 	value = 0
 	mob_trait = TRAIT_EXTROVERT

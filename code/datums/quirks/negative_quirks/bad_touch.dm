@@ -1,5 +1,5 @@
 /datum/quirk/bad_touch
-	name = "Bad Touch"
+	name = "Personal Space"
 	desc = "You don't like hugs. You'd really prefer if people just left you alone."
 	icon = "tg-bad-touch"
 	mob_trait = TRAIT_BADTOUCH
@@ -9,7 +9,7 @@
 	medical_record_text = "Patient has disdain for being touched. Potentially has undiagnosed haphephobia."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	hardcore_value = 1
-	mail_goodies = list(/obj/item/reagent_containers/spray/pepper) // show me on the doll where the bad man touched you
+	mail_goodies = list(/obj/item/reagent_containers/spray/pepper)
 
 /datum/quirk/bad_touch/add(client/client_source)
 	RegisterSignals(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HELP_ACT), PROC_REF(uncomfortable_touch))

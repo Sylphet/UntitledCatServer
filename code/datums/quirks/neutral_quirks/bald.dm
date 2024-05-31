@@ -1,10 +1,10 @@
 /datum/quirk/item_quirk/bald
-	name = "Smooth-Headed"
-	desc = "You have no hair and are quite insecure about it! Keep your wig on, or at least your head covered up."
+	name = "Wigs"
+	desc = "You haven't got natural hair, but can wear any wig of your choice. Can be removed whenever you like"
 	icon = FA_ICON_EGG
 	value = 0
 	mob_trait = TRAIT_BALD
-	gain_text = span_notice("Your head is as smooth as can be, it's terrible.")
+	gain_text = span_notice("Your head is as smooth as can be.")
 	lose_text = span_notice("Your head itches, could it be... growing hair?!")
 	medical_record_text = "Patient starkly refused to take off headwear during examination."
 	mail_goodies = list(/obj/item/clothing/head/wig/random)

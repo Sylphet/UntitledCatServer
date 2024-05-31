@@ -395,14 +395,6 @@
 		clear_mood_event(MOOD_CATEGORY_AREA_BEAUTY)
 		return
 
-	if(HAS_TRAIT(mob_parent, TRAIT_SNOB))
-		switch(area_to_beautify.beauty)
-			if(-INFINITY to BEAUTY_LEVEL_HORRID)
-				add_mood_event(MOOD_CATEGORY_AREA_BEAUTY, /datum/mood_event/horridroom)
-				return
-			if(BEAUTY_LEVEL_HORRID to BEAUTY_LEVEL_BAD)
-				add_mood_event(MOOD_CATEGORY_AREA_BEAUTY, /datum/mood_event/badroom)
-				return
 	switch(area_to_beautify.beauty)
 		if(BEAUTY_LEVEL_BAD to BEAUTY_LEVEL_DECENT)
 			clear_mood_event(MOOD_CATEGORY_AREA_BEAUTY)

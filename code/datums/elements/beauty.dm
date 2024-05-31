@@ -1,7 +1,6 @@
 /**
  * Beauty element. It makes the indoor area the parent is in prettier or uglier depending on the beauty var value.
  * Clean and well decorated areas lead to positive moodlets for passerbies;
- * Shabbier, dirtier ones lead to negative moodlets EXCLUSIVE to characters with the snob quirk.
  */
 /datum/element/beauty
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH_ON_HOST_DESTROY

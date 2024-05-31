@@ -1,6 +1,6 @@
 /datum/quirk/frail
 	name = "Frail"
-	desc = "You have skin of paper and bones of glass! You suffer wounds much more easily than most."
+	desc = "You suffer wounds much more easily than most."
 	icon = FA_ICON_SKULL
 	value = -6
 	mob_trait = TRAIT_EASILY_WOUNDED

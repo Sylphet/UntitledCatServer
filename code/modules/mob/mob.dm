@@ -1550,9 +1550,6 @@
 			speedies += thing.slowdown
 
 	//if our movespeed mod is in the negatives, we don't modify it since that's a benefit
-	if(speedies > 0 && HAS_TRAIT(src, TRAIT_SETTLER))
-		speedies *= 0.2
-
 	if(immutable_speedies)
 		add_or_update_variable_movespeed_modifier(
 			/datum/movespeed_modifier/equipment_speedmod/immutable,
