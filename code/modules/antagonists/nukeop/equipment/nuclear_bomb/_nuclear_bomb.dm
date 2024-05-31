@@ -246,7 +246,8 @@ GLOBAL_VAR(station_nuke_source)
 		return
 
 	if(detonation_timer < world.time)
-		explode()
+		neutron_destruct()
+		//explode()
 		return
 
 	var/volume = (get_time_left() <= 20 ? 30 : 5)
@@ -464,6 +465,12 @@ GLOBAL_VAR(station_nuke_source)
 		source = src,
 		header = "Nuke Armed",
 	)
+	for(var/obj/machinery/light/stationlights)
+		stationlights.color = "#FF3232" //there is a smarter way of doing this, but Im not smart
+		stationlights.brightness = 4 //darken all lights on the station.
+		stationlights.update()
+	sound_to_playing_players('sound/effects/selfdestructalarm.ogg')
+	priority_announce("ATTENTION NEUTRON PURGE PROTOCOL COMMENCING. ALL STAFF ARE ADVISED TO RETREAT TO A RADIATION SHELTER. PURGE COMMENCING IN [timer_set] SECONDS. THIS IS NOT A DRILL.", "Purge Protocol Update") //neutron_death.timeleft didnt work, what the fuck, someone tell me whats happening
 	update_appearance()
 
 /// Disarms the nuke, reverting all pinpointers and the security level
@@ -482,6 +489,11 @@ GLOBAL_VAR(station_nuke_source)
 
 	countdown.stop()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NUKE_DEVICE_DISARMED, src)
+	for(var/obj/machinery/light/stationlights)
+		stationlights.color = "#f3fffa" //-----this will wipe any spraypaint off of a light. Too bad!---- (VivI)
+		stationlights.brightness = 8 //return to normal values
+		stationlights.update()
+	priority_announce("ATTENTION NEUTRON PURGE PROTOCOL DISABLED. All staff are to listen for instructions from their departmental heads.", "Purge Protocol Update")
 	update_appearance()
 
 /// If the nuke is active, gets how much time is left until it detonates, in seconds.
@@ -510,6 +522,22 @@ GLOBAL_VAR(station_nuke_source)
  *
  * Goes through a few timers and plays a cinematic.
  */
+/obj/machinery/nuclearbomb/proc/neutron_destruct() //the big bad boom
+
+	for(var/mob/living/victim as anything in GLOB.mob_living_list) //literally any liiving thing
+		var/turf/target_turf = get_turf(victim)
+		if(istype(victim.loc, /area/station/maintenance/radshelter))
+			var/area/station/maintenance/radshelter/shelter = victim.loc //is the person we are about to turn to dust in /area/maintenance/radshelter?
+			if(!shelter) //"shelter.Entered" didnt work here, wonder why.
+				to_chat(victim, span_boldannounce("The station cries around you as the Neutron Purge occurs. The shelter seems to have protected you. It's safe to leave."))
+				shelter = TRUE //u winnner
+				continue
+		if(victim.stat != DEAD && target_turf && is_station_level(target_turf.z)) //is target_turf on the station Zlevel? If not, dont dust them
+			flash_lighting_fx()
+			to_chat(victim, span_userdanger("For a moment every cell in your body cries in pain. Only for a moment, though.")) //OOC HEP IDED
+			victim.dust()
+		SSticker.roundend_check_paused = TRUE
+
 /obj/machinery/nuclearbomb/proc/explode()
 	if(safety)
 		timing = FALSE
@@ -519,7 +547,7 @@ GLOBAL_VAR(station_nuke_source)
 	yes_code = FALSE
 	safety = TRUE
 	update_appearance()
-	sound_to_playing_players('sound/machines/alarm.ogg')
+	//sound_to_playing_players('sound/machines/alarm.ogg')
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NUKE_DEVICE_DETONATING, src)
 

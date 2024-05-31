@@ -415,3 +415,6 @@
 /area/station/maintenance/floor4/starboard/aft
 	name = "\improper 4th Floor Aft Starboard Maint"
 	icon_state = "maintaft"
+
+/area/station/maintenance/radshelter
+	name = "\improper Radiation Shelter"
