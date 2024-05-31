@@ -1,6 +1,6 @@
 /datum/quirk/introvert
 	name = "Introvert"
-	desc = "You are energized by having time to yourself, and enjoy spending your free time in the library."
+	desc = "You find it easier to recharge by spending time with yourself."
 	icon = FA_ICON_BOOK_READER
 	value = 0
 	mob_trait = TRAIT_INTROVERT

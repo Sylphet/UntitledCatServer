@@ -7,8 +7,7 @@ GLOBAL_LIST_INIT_TYPED(quirk_blacklist, /list/datum/quirk, list(
 	list(/datum/quirk/item_quirk/blindness, /datum/quirk/item_quirk/nearsighted),
 	list(/datum/quirk/item_quirk/blindness, /datum/quirk/touchy),
 	list(/datum/quirk/jolly, /datum/quirk/depression, /datum/quirk/apathetic, /datum/quirk/hypersensitive),
-	list(/datum/quirk/no_taste, /datum/quirk/vegetarian, /datum/quirk/deviant_tastes, /datum/quirk/gamer),
-	list(/datum/quirk/pineapple_liker, /datum/quirk/pineapple_hater, /datum/quirk/gamer),
+	list(/datum/quirk/no_taste, /datum/quirk/vegetarian, /datum/quirk/deviant_tastes),
 	list(/datum/quirk/alcohol_tolerance, /datum/quirk/light_drinker),
 	list(/datum/quirk/item_quirk/clown_enjoyer, /datum/quirk/item_quirk/mime_fan, /datum/quirk/item_quirk/pride_pin),
 	list(/datum/quirk/bad_touch, /datum/quirk/friendly),
@@ -21,9 +20,9 @@ GLOBAL_LIST_INIT_TYPED(quirk_blacklist, /list/datum/quirk, list(
 	list(/datum/quirk/mute, /datum/quirk/softspoken),
 	list(/datum/quirk/poor_aim, /datum/quirk/bighands),
 	list(/datum/quirk/bilingual, /datum/quirk/foreigner),
-	list(/datum/quirk/spacer_born, /datum/quirk/item_quirk/settler),
+	list(/datum/quirk/spacer_born),
 	list(/datum/quirk/photophobia, /datum/quirk/nyctophobia),
-	list(/datum/quirk/item_quirk/settler, /datum/quirk/freerunning),
+	list(/datum/quirk/freerunning),
 	list(/datum/quirk/numb, /datum/quirk/selfaware),
 ))
 
@@ -62,7 +61,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	RETURN_TYPE(/list)
 	if (!quirks.len)
 		SetupQuirks()
-
 	return quirks
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()

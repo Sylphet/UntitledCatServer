@@ -1,6 +1,6 @@
 /datum/quirk/touchy
-	name = "Touchy"
-	desc = "You are very touchy and have to physically be able to touch something to examine it."
+	name = "Kinesthetic Learner"
+	desc = "You use your hands to explore the world, and have to touch something to properly examine it."
 	icon = FA_ICON_HAND
 	value = -2
 	gain_text = span_danger("You feel like you can't examine things from a distance.")

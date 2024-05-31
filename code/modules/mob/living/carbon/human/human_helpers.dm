@@ -339,8 +339,6 @@
 		fitness_modifier *= 2 // To be able to suplex a rod, you must possess an incredible amount of power
 	if (HAS_TRAIT(src, TRAIT_EASILY_WOUNDED))
 		fitness_modifier /= 2
-	if (HAS_TRAIT(src, TRAIT_GAMER))
-		fitness_modifier /= 1.5
 	if (HAS_TRAIT(src, TRAIT_GRABWEAKNESS))
 		fitness_modifier /= 1.5
 

@@ -2,7 +2,7 @@
 
 /datum/quirk/all_nighter
 	name = "All Nighter"
-	desc = "You didn't get any sleep last night, and people can tell! You'll constantly be in a bad mood and will have a tendency to sleep longer. Stimulants or a nap might help, though."
+	desc = "You didn't get any sleep last night. You'll constantly be in a bad mood and will have a tendency to sleep longer. Stimulants or a nap might help, though."
 	icon = FA_ICON_BED
 	value = -4
 	mob_trait = TRAIT_HEAVY_SLEEPER

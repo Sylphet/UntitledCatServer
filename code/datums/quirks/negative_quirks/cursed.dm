@@ -1,6 +1,6 @@
 /datum/quirk/cursed
 	name = "Cursed"
-	desc = "You are cursed with bad luck. You are much more likely to suffer from accidents and mishaps. When it rains, it pours."
+	desc = "You are certain that you're cursed with bad luck, being much more likely to suffer from accidents and mishaps."
 	icon = FA_ICON_CLOUD_SHOWERS_HEAVY
 	value = -8
 	mob_trait = TRAIT_CURSED

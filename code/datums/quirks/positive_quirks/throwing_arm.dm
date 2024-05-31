@@ -1,6 +1,6 @@
 /datum/quirk/throwingarm
 	name = "Throwing Arm"
-	desc = "Your arms have a lot of heft to them! Objects that you throw just always seem to fly further than everyone elses, and you never miss a toss."
+	desc = "Your arms are explosive! Objects that you throw just always seem to fly further than everyone elses, and you never miss a toss."
 	icon = FA_ICON_BASEBALL
 	value = 7
 	mob_trait = TRAIT_THROWINGARM

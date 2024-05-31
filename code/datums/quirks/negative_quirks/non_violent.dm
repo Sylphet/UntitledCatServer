@@ -1,6 +1,6 @@
 /datum/quirk/nonviolent
 	name = "Pacifist"
-	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
+	desc = "You can't bring yourself to hurt anyone."
 	icon = FA_ICON_PEACE
 	value = -8
 	mob_trait = TRAIT_PACIFISM
