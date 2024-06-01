@@ -116,7 +116,7 @@
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. Still popular today."
 	color = "#664300" // rgb: 102, 67, 0
 	nutriment_factor = 1
-	boozepwr = 25
+	boozepwr = 5
 	taste_description = "mild carbonated malt"
 	ph = 4
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -138,7 +138,7 @@
 /datum/reagent/consumable/ethanol/beer/maltliquor
 	name = "Malt Liquor"
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. This variety is stronger than usual, super cheap, and super terrible."
-	boozepwr = 35
+	boozepwr = 5
 	taste_description = "sweet corn beer and the hood life"
 	ph = 4.8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -147,7 +147,7 @@
 	name = "Green Beer"
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. This variety is dyed a festive green."
 	color = COLOR_CRAYON_GREEN
-	overdose_threshold = 55 //More than a glass
+	overdose_threshold = 20 //More than a glass
 	taste_description = "green piss water"
 	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -179,8 +179,7 @@
 	name = "Kahlua"
 	description = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936!"
 	color = "#8e8368" // rgb: 142,131,104
-	boozepwr = 45
-	ph = 6
+	boozepwr = 40
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolized_traits = list(TRAIT_STIMULATED)
 
@@ -196,7 +195,7 @@
 	name = "Whiskey"
 	description = "A superb and well-aged single-malt whiskey. Damn."
 	color = "#b4a287" // rgb: 180,162,135
-	boozepwr = 75
+	boozepwr = 40
 	taste_description = "molasses"
 	ph = 4.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -225,8 +224,8 @@
 	name = "Thirteen Loko"
 	description = "A potent mixture of caffeine and alcohol."
 	color = "#102000" // rgb: 16, 32, 0
-	nutriment_factor = 1
-	boozepwr = 80
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	boozepwr = 50
 	quality = DRINK_GOOD
 	overdose_threshold = 60
 	taste_description = "jitters and death"
@@ -291,7 +290,7 @@
 	name = "Vodka"
 	description = "Number one drink AND fueling choice for Russians worldwide."
 	color = "#0064C8" // rgb: 0, 100, 200
-	boozepwr = 65
+	boozepwr = 40
 	taste_description = "grain alcohol"
 	ph = 8.1
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_CLEANS //Very high proof
@@ -301,8 +300,8 @@
 	name = "Bilk"
 	description = "This appears to be beer mixed with milk. Disgusting."
 	color = "#895C4C" // rgb: 137, 92, 76
-	nutriment_factor = 2
-	boozepwr = 15
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	boozepwr = 5
 	taste_description = "desperation and lactate"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -316,7 +315,7 @@
 	name = "Three Mile Island Iced Tea"
 	description = "Made for a woman, strong enough for a man."
 	color = "#666340" // rgb: 102, 99, 64
-	boozepwr = 10
+	boozepwr = 5
 	quality = DRINK_FANTASTIC
 	taste_description = "dryness"
 	ph = 3.5
@@ -330,7 +329,7 @@
 	name = "Gin"
 	description = "It's gin. In space. I say, good sir."
 	color = "#d8e8f0" // rgb: 216,232,240
-	boozepwr = 45
+	boozepwr = 40
 	taste_description = "an alcoholic christmas tree"
 	ph = 6.9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -340,7 +339,7 @@
 	name = "Rum"
 	description = "Yohoho and all that."
 	color = "#c9c07e" // rgb: 201,192,126
-	boozepwr = 60
+	boozepwr = 40
 	taste_description = "spiked butterscotch"
 	ph = 6.5
 	default_container = /obj/item/reagent_containers/cup/glass/bottle/rum
@@ -349,7 +348,7 @@
 	name = "Tequila"
 	description = "A strong and mildly flavoured, Mexican produced spirit. Feeling thirsty, hombre?"
 	color = "#FFFF91" // rgb: 255, 255, 145
-	boozepwr = 70
+	boozepwr = 40
 	taste_description = "paint stripper"
 	ph = 4
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -359,7 +358,7 @@
 	name = "Vermouth"
 	description = "You suddenly feel a craving for a martini..."
 	color = "#91FF91" // rgb: 145, 255, 145
-	boozepwr = 45
+	boozepwr = 40
 	taste_description = "dry alcohol"
 	ph = 3.25
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -368,7 +367,7 @@
 	name = "Wine"
 	description = "A premium alcoholic beverage made from distilled grape juice."
 	color = "#7E4043" // rgb: 126, 64, 67
-	boozepwr = 35
+	boozepwr = 15
 	taste_description = "bitter sweetness"
 	ph = 3.45
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -392,7 +391,7 @@
 	name = "Lizard Wine"
 	description = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol."
 	color = "#7E4043" // rgb: 126, 64, 67
-	boozepwr = 45
+	boozepwr = 15
 	quality = DRINK_FANTASTIC
 	taste_description = "scaley sweetness"
 	ph = 3
@@ -403,7 +402,7 @@
 	name = "Grappa"
 	description = "A fine Italian brandy, for when regular wine just isn't alcoholic enough for you."
 	color = "#F8EBF1"
-	boozepwr = 60
+	boozepwr = 40
 	taste_description = "classy bitter sweetness"
 	ph = 3.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -413,7 +412,7 @@
 	name = "Amaretto"
 	description = "A gentle drink that carries a sweet aroma."
 	color = "#E17600"
-	boozepwr = 25
+	boozepwr = 20
 	taste_description = "fruity and nutty sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	glass_price = DRINK_PRICE_STOCK
@@ -422,8 +421,7 @@
 	name = "Cognac"
 	description = "A sweet and strongly alcoholic drink, made after numerous distillations and years of maturing. Classy as fornication."
 	color = "#AB3C05" // rgb: 171, 60, 5
-	boozepwr = 75
-	taste_description = "smooth and french"
+	boozepwr = 40
 	ph = 3.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	glass_price = DRINK_PRICE_STOCK
@@ -432,7 +430,7 @@
 	name = "Absinthe"
 	description = "A powerful alcoholic drink. Rumored to cause hallucinations but does not."
 	color = rgb(10, 206, 0)
-	boozepwr = 80 //Very strong even by default
+	boozepwr = 40
 	taste_description = "death and licorice"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -445,7 +443,7 @@
 	name = "Hooch"
 	description = "Either someone's failure at cocktail making or attempt in alcohol production. In any case, do you really want to drink that?"
 	color = "#664300" // rgb: 102, 67, 0
-	boozepwr = 100
+	boozepwr = 40
 	taste_description = "pure resignation"
 	addiction_types = list(/datum/addiction/alcohol = 5, /datum/addiction/maintenance_drugs = 2)
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -454,7 +452,7 @@
 	name = "Ale"
 	description = "A dark alcoholic beverage made with malted barley and yeast."
 	color = "#976063" // rgb: 151,96,99
-	boozepwr = 65
+	boozepwr = 5
 	taste_description = "hearty barley ale"
 	ph = 4.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -464,7 +462,7 @@
 	name = "Goldschlager"
 	description = "100 proof cinnamon schnapps, made for alcoholic teen girls on spring break."
 	color = "#FFFF91" // rgb: 255, 255, 145
-	boozepwr = 25
+	boozepwr = 40
 	quality = DRINK_NICE
 	taste_description = "burning cinnamon"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -497,7 +495,7 @@
 	name = "Patron"
 	description = "Tequila with silver in it, a favorite of alcoholic women in the club scene."
 	color = "#585840" // rgb: 88, 88, 64
-	boozepwr = 60
+	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "metallic and expensive"
 	ph = 4.5
@@ -508,7 +506,7 @@
 	name = "Gin and Tonic"
 	description = "An all time classic, mild cocktail."
 	color = "#cae7ec" // rgb: 202,231,236
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "mild and tart"
 	ph = 3
@@ -519,7 +517,7 @@
 	name = "Rum and Coke"
 	description = "Rum, mixed with cola."
 	taste_description = "cola"
-	boozepwr = 40
+	boozepwr = 20
 	quality = DRINK_NICE
 	color = "#3E1B00"
 	ph = 4
@@ -529,7 +527,7 @@
 	name = "Cuba Libre"
 	description = "Viva la Revolucion! Viva Cuba Libre!"
 	color = "#3E1B00" // rgb: 62, 27, 0
-	boozepwr = 50
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "a refreshing marriage of citrus and rum"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -549,7 +547,7 @@
 	name = "Whiskey Cola"
 	description = "Whiskey, mixed with cola. Surprisingly refreshing."
 	color = "#3E1B00" // rgb: 62, 27, 0
-	boozepwr = 70
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "cola"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -558,7 +556,7 @@
 	name = "Classic Martini"
 	description = "Vermouth with Gin. Not quite how 007 enjoyed it, but still delicious."
 	color = "#cddbac" // rgb: 205,219,172
-	boozepwr = 60
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "dry class"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -568,7 +566,7 @@
 	name = "Vodka Martini"
 	description = "Vodka with Gin. Not quite how 007 enjoyed it, but still delicious."
 	color = "#cddcad" // rgb: 205,220,173
-	boozepwr = 65
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "shaken, not stirred"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -578,7 +576,7 @@
 	name = "White Russian"
 	description = "That's just, like, your opinion, man..."
 	color = "#A68340" // rgb: 166, 131, 64
-	boozepwr = 50
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "bitter cream"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -587,7 +585,7 @@
 	name = "Screwdriver"
 	description = "Vodka, mixed with plain ol' orange juice. The result is surprisingly delicious."
 	color = "#A68310" // rgb: 166, 131, 16
-	boozepwr = 55
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "oranges"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -660,7 +658,7 @@
 	name = "Booger"
 	description = "Ewww..."
 	color = "#8CFF8C" // rgb: 140, 255, 140
-	boozepwr = 45
+	boozepwr = 5
 	taste_description = "sweet 'n creamy"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -668,7 +666,7 @@
 	name = "Bloody Mary"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Or at least you THINK the red stuff is tomato juice."
 	color = "#bf707c" // rgb: 191,112,124
-	boozepwr = 55
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "tomatoes with a hint of lime and liquid murder"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -682,7 +680,7 @@
 	name = "Brave Bull"
 	description = "It's just as effective as Dutch-Courage!"
 	color = "#a79f98" // rgb: 167,159,152
-	boozepwr = 60
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "alcoholic bravery"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -707,7 +705,7 @@
 	name = "Tequila Sunrise"
 	description = "Tequila, Grenadine, and Orange Juice."
 	color = "#FFE48C" // rgb: 255, 228, 140
-	boozepwr = 45
+	boozepwr = 30
 	quality = DRINK_GOOD
 	taste_description = "oranges with a hint of pomegranate"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -736,7 +734,7 @@
 	name = "Toxins Special"
 	description = "This thing is ON FIRE! CALL THE DAMN SHUTTLE!"
 	color = "#8880a8" // rgb: 136,128,168
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy toxins"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -748,8 +746,8 @@
 /datum/reagent/consumable/ethanol/beepsky_smash
 	name = "Beepsky Smash"
 	description = "Drink this and prepare for the LAW."
-	color = COLOR_OLIVE // rgb: 128,128,0
-	boozepwr = 60 //THE FIST OF THE LAW IS STRONG AND HARD
+	color = "#808000" // rgb: 128,128,0
+	boozepwr = 40 //THE FIST OF THE LAW IS STRONG AND HARD
 	quality = DRINK_GOOD
 	metabolization_rate = 1.25 * REAGENTS_METABOLISM
 	taste_description = "JUSTICE"
@@ -797,7 +795,7 @@
 	name = "Irish Cream"
 	description = "Whiskey-imbued cream, what else would you expect from the Irish?"
 	color = "#e3d0b2" // rgb: 227,208,178
-	boozepwr = 50
+	boozepwr = 30
 	quality = DRINK_NICE
 	taste_description = "creamy alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -806,7 +804,7 @@
 	name = "The Manly Dorf"
 	description = "Beer and Ale, brought together in a delicious mix. Intended for true men only."
 	color = "#815336" // rgb: 129,83,54
-	boozepwr = 100 //For the manly only
+	boozepwr = 5 //For the manly only
 	quality = DRINK_NICE
 	taste_description = "hair on your chest and your chin"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -834,7 +832,7 @@
 	name = "Long Island Iced Tea"
 	description = "The liquor cabinet, brought together in a delicious mix. Intended for middle-aged alcoholic women only."
 	color = "#ff6633" // rgb: 255,102,51
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "a mixture of cola and alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -843,7 +841,7 @@
 	name = "Moonshine"
 	description = "You've really hit rock bottom now... your liver packed its bags and left last night."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha) (like water)
-	boozepwr = 95
+	boozepwr = 60
 	taste_description = "bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -851,7 +849,7 @@
 	name = "B-52"
 	description = "Coffee, Irish Cream, and cognac. You will get bombed."
 	color = "#8f1733" // rgb: 143,23,51
-	boozepwr = 85
+	boozepwr = 30
 	quality = DRINK_GOOD
 	taste_description = "angry and irish"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -865,7 +863,7 @@
 	name = "Irish Coffee"
 	description = "Coffee, and alcohol. More fun than a Mimosa to drink in the morning."
 	color = "#874010" // rgb: 135,64,16
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "giving up on the day"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -875,7 +873,7 @@
 	name = "Margarita"
 	description = "On the rocks with salt on the rim. Arriba~!"
 	color = "#8CFF8C" // rgb: 140, 255, 140
-	boozepwr = 35
+	boozepwr = 40
 	quality = DRINK_NICE
 	taste_description = "dry and salty"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -885,7 +883,7 @@
 	name = "Black Russian"
 	description = "For the lactose-intolerant. Still as classy as a White Russian."
 	color = "#360000" // rgb: 54, 0, 0
-	boozepwr = 70
+	boozepwr = 30
 	quality = DRINK_NICE
 	taste_description = "bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -904,7 +902,7 @@
 	name = "Manhattan Project"
 	description = "A scientist's drink of choice, for pondering ways to blow up the station."
 	color = COLOR_MOSTLY_PURE_RED
-	boozepwr = 45
+	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "death, the destroyer of worlds"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -917,7 +915,7 @@
 	name = "Whiskey Soda"
 	description = "For the more refined griffon."
 	color = "#ffcc33" // rgb: 255,204,51
-	boozepwr = 70
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "soda"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -926,7 +924,7 @@
 	name = "Anti-freeze"
 	description = "The ultimate refreshment. Not what it sounds like."
 	color = "#30f0f8" // rgb: 48,240,248
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "Jack Frost's piss"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -939,7 +937,7 @@
 	name = "Barefoot"
 	description = "Barefoot and pregnant."
 	color = "#fc5acc" // rgb: 252,90,204
-	boozepwr = 45
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "creamy berries"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -955,8 +953,8 @@
 /datum/reagent/consumable/ethanol/snowwhite
 	name = "Snow White"
 	description = "A cold refreshment."
-	color = COLOR_WHITE // rgb: 255, 255, 255
-	boozepwr = 35
+	color = "#FFFFFF" // rgb: 255, 255, 255
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "refreshing cold"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -965,7 +963,7 @@
 	name = "Demon's Blood"
 	description = "AHHHH!!!!"
 	color = "#820000" // rgb: 130, 0, 0
-	boozepwr = 75
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "sweet tasting iron"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1002,7 +1000,7 @@
 	name = "Devil's Kiss"
 	description = "Creepy time!"
 	color = "#A68310" // rgb: 166, 131, 16
-	boozepwr = 70
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "bitter iron"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1046,7 +1044,7 @@
 	name = "Vodka and Tonic"
 	description = "For when a gin and tonic isn't Russian enough."
 	color = "#0064C8" // rgb: 0, 100, 200
-	boozepwr = 70
+	boozepwr = 30
 	quality = DRINK_NICE
 	taste_description = "tart bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1055,7 +1053,7 @@
 	name = "Gin Fizz"
 	description = "Refreshingly lemony, deliciously dry."
 	color = "#ffffcc" // rgb: 255,255,204
-	boozepwr = 45
+	boozepwr = 30
 	quality = DRINK_GOOD
 	taste_description = "dry, tart lemons"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1064,7 +1062,7 @@
 	name = "Bahama Mama"
 	description = "A tropical cocktail with a complex blend of flavors."
 	color = "#FF7F3B" // rgb: 255, 127, 59
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "pineapple, coconut, and a hint of coffee"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1073,7 +1071,7 @@
 	name = "Singulo"
 	description = "A blue-space beverage!"
 	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "concentrated matter"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1106,7 +1104,7 @@
 	name = "Sbiten"
 	description = "A spicy Vodka! Might be a little hot for the little guys!"
 	color = "#d8d5ae" // rgb: 216,213,174
-	boozepwr = 70
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "hot and spice"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1119,7 +1117,7 @@
 	name = "Red Mead"
 	description = "The true Viking drink! Even though it has a strange red color."
 	color = "#C73C00" // rgb: 199, 60, 0
-	boozepwr = 31 //Red drinks are stronger
+	boozepwr = 8 //Red drinks are stronger
 	quality = DRINK_GOOD
 	taste_description = "sweet and salty alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1128,8 +1126,8 @@
 	name = "Mead"
 	description = "A Viking drink, though a cheap one."
 	color = "#e0c058" // rgb: 224,192,88
-	nutriment_factor = 1
-	boozepwr = 30
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "sweet, sweet alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1138,7 +1136,7 @@
 	name = "Iced Beer"
 	description = "A beer which is so cold the air around it freezes."
 	color = "#664300" // rgb: 102, 67, 0
-	boozepwr = 15
+	boozepwr = 5
 	taste_description = "refreshingly cold"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1150,7 +1148,7 @@
 	name = "Grog"
 	description = "Watered-down rum, Nanotrasen approves!"
 	color = "#e0e058" // rgb: 224,224,88
-	boozepwr = 1 //Basically nothing
+	boozepwr = 20 //Basically nothing
 	taste_description = "a poor excuse for alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1158,7 +1156,7 @@
 	name = "Aloe"
 	description = "So very, very, very good."
 	color = "#f8f800" // rgb: 248,248,0
-	boozepwr = 35
+	boozepwr = 5
 	quality = DRINK_VERYGOOD
 	taste_description = "sweet 'n creamy"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1169,7 +1167,7 @@
 	name = "Andalusia"
 	description = "A nice, strangely named drink."
 	color = "#c8f860" // rgb: 200,248,96
-	boozepwr = 40
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "lemons"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1178,7 +1176,7 @@
 	name = "Allies Cocktail"
 	description = "A drink made from your allies. Not as sweet as those made from your enemies."
 	color = "#60f8f8" // rgb: 96,248,248
-	boozepwr = 45
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "bitter yet free"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1188,7 +1186,7 @@
 	name = "Acid Spit"
 	description = "A drink for the daring, can be deadly if incorrectly prepared!"
 	color = "#365000" // rgb: 54, 80, 0
-	boozepwr = 70
+	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "stomach acid"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1197,7 +1195,7 @@
 	name = "Amasec"
 	description = "Official drink of the Nanotrasen Gun-Club!"
 	color = "#e0e058" // rgb: 224,224,88
-	boozepwr = 35
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "dark and metallic"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1206,7 +1204,7 @@
 	name = "Changeling Sting"
 	description = "You take a tiny sip and feel a burning sensation..."
 	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 50
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "your brain coming out your nose"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1220,7 +1218,7 @@
 	name = "Irish Car Bomb"
 	description = "Mmm, tastes like the free Irish state."
 	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 25
+	boozepwr = 30
 	quality = DRINK_GOOD
 	taste_description = "the spirit of Ireland"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1229,7 +1227,7 @@
 	name = "Syndicate Bomb"
 	description = "Tastes like terrorism!"
 	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 90
+	boozepwr = 30
 	quality = DRINK_GOOD
 	taste_description = "purified antagonism"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1252,7 +1250,7 @@
 	name = "Erika Surprise"
 	description = "The surprise is, it's green!"
 	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 35
+	boozepwr = 5
 	quality = DRINK_VERYGOOD
 	taste_description = "tartness and bananas"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1262,7 +1260,7 @@
 	description = "Only for the experienced. You think you see sand floating in the glass."
 	nutriment_factor = 1
 	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 65
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "a beach"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1272,7 +1270,7 @@
 	description = "A drink from Clown Heaven."
 	nutriment_factor = 1
 	color = "#FFFF91" // rgb: 255, 255, 140
-	boozepwr = 60
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "a bad joke"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1289,7 +1287,7 @@
 	description = "A drink from Mime Heaven."
 	nutriment_factor = 2
 	color = "#a8a8a8" // rgb: 168,168,168
-	boozepwr = 59 //Proof that clowns are better than mimes right here
+	boozepwr = 20 //Proof that clowns are better than mimes right here
 	quality = DRINK_GOOD
 	taste_description = "a pencil eraser"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1305,7 +1303,7 @@
 	name = "Drunken Blumpkin"
 	description = "A weird mix of whiskey and blumpkin juice."
 	color = "#1EA0FF" // rgb: 30,160,255
-	boozepwr = 50
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "molasses and a mouthful of pool water"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1314,7 +1312,7 @@
 	name = "Whiskey Sour"
 	description = "Lemon juice/whiskey/sugar mixture. Moderate alcohol content."
 	color = rgb(255, 201, 49)
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "sour lemons"
 
@@ -1322,8 +1320,8 @@
 	name = "Hard Cider"
 	description = "Apple juice, for adults."
 	color = "#CD6839"
-	nutriment_factor = 1
-	boozepwr = 25
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	boozepwr = 10
 	taste_description = "the season that <i>falls</i> between summer and winter"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	glass_price = DRINK_PRICE_STOCK
@@ -1332,7 +1330,7 @@
 	name = "Fetching Fizz"
 	description = "Whiskey sour/iron/uranium mixture resulting in a highly magnetic slurry. Mild alcohol content." //Requires no alcohol to make but has alcohol anyway because ~magic~
 	color = rgb(255, 91, 15)
-	boozepwr = 10
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	taste_description = "charged metal" // the same as teslium, honk honk.
@@ -1348,7 +1346,7 @@
 	name = "Hearty Punch"
 	description = "Brave bull/syndicate bomb/absinthe mixture resulting in an energizing beverage. Mild alcohol content."
 	color = rgb(140, 0, 0)
-	boozepwr = 90
+	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	taste_description = "bravado in the face of disaster"
@@ -1426,7 +1424,7 @@
 	name = "Neurotoxin"
 	description = "A strong neurotoxin that puts the subject into a death-like state."
 	color = "#2E2E61" // rgb: 46, 46, 97
-	boozepwr = 50
+	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "a numbing sensation"
 	metabolization_rate = 1 * REAGENTS_METABOLISM
@@ -1515,8 +1513,8 @@
 	name = "Eggnog"
 	description = "For enjoying the most wonderful time of the year."
 	color = "#fcfdc6" // rgb: 252, 253, 198
-	nutriment_factor = 2
-	boozepwr = 1
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	boozepwr = 10
 	quality = DRINK_VERYGOOD
 	taste_description = "custard and alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1526,7 +1524,7 @@
 	description = "For suffering during a period of joy."
 	color = "#abb862" // rgb: 252, 253, 198
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	boozepwr = 1
+	boozepwr = 10
 	quality = DRINK_REVOLTING
 	taste_description = "custard and alcohol"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1548,7 +1546,7 @@
 /datum/reagent/consumable/ethanol/triple_sec
 	name = "Triple Sec"
 	description = "A sweet and vibrant orange liqueur."
-	color = COLOR_ICECREAM_PEACH
+	color = "#ffcc66"
 	boozepwr = 30
 	taste_description = "a warm flowery orange taste which recalls the ocean air and summer wind of the caribbean"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1581,7 +1579,7 @@
 	name = "Quadruple Sec"
 	description = "Kicks just as hard as licking the power cell on a baton, but tastier."
 	color = "#cc0000"
-	boozepwr = 35
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "an invigorating bitter freshness which suffuses your being; no enemy of the station will go unrobusted this day"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1598,7 +1596,7 @@
 	name = "Quintuple Sec"
 	description = "Law, Order, Alcohol, and Police Brutality distilled into one single elixir of JUSTICE."
 	color = "#ff3300"
-	boozepwr = 55
+	boozepwr = 40
 	quality = DRINK_FANTASTIC
 	taste_description = "THE LAW"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1618,7 +1616,7 @@
 	name = "Grasshopper"
 	description = "A fresh and sweet dessert shooter. Difficult to look manly while drinking this."
 	color = "#00ff00"
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "chocolate and mint dancing around your mouth"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1627,7 +1625,7 @@
 	name = "Stinger"
 	description = "A snappy way to end the day."
 	color = "#ccff99"
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "a slap on the face in the best possible way"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1635,7 +1633,7 @@
 /datum/reagent/consumable/ethanol/bastion_bourbon
 	name = "Bastion Bourbon"
 	description = "Soothing hot herbal brew with restorative properties. Hints of citrus and berry flavors."
-	color = COLOR_CYAN
+	color = "#00FFFF"
 	boozepwr = 30
 	quality = DRINK_FANTASTIC
 	taste_description = "hot herbal brew with a hint of fruit"
@@ -1677,8 +1675,8 @@
 /datum/reagent/consumable/ethanol/squirt_cider
 	name = "Squirt Cider"
 	description = "Fermented squirt extract with a nose of stale bread and ocean water. Whatever a squirt is."
-	color = COLOR_RED
-	boozepwr = 40
+	color = "#FF0000"
+	boozepwr = 10
 	taste_description = "stale bread with a staler aftertaste"
 	nutriment_factor = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1691,7 +1689,7 @@
 	name = "Fringe Weaver"
 	description = "Bubbly, classy, and undoubtedly strong - a Glitch City classic."
 	color = "#FFEAC4"
-	boozepwr = 90 //classy hooch, essentially, but lower pwr to make up for slightly easier access
+	boozepwr = 40 //classy hooch, essentially, but lower pwr to make up for slightly easier access
 	quality = DRINK_GOOD
 	taste_description = "ethylic alcohol with a hint of sugar"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1700,21 +1698,17 @@
 	name = "Sugar Rush"
 	description = "Sweet, light, and fruity - as girly as it gets."
 	color = "#FF226C"
-	boozepwr = 10
+	boozepwr = 5
 	quality = DRINK_GOOD
 	taste_description = "your arteries clogging with sugar"
 	nutriment_factor = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-/datum/reagent/consumable/ethanol/sugar_rush/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
-	. = ..()
-	drinker.satiety -= 10 * REM * seconds_per_tick //junky as hell! a whole glass will keep you from being able to eat junk food
-
 /datum/reagent/consumable/ethanol/crevice_spike
 	name = "Crevice Spike"
 	description = "Sour, bitter, and smashingly sobering."
 	color = "#5BD231"
-	boozepwr = -10 //sobers you up - ideally, one would drink to get hit with brute damage now to avoid alcohol problems later
+	boozepwr = -20 //sobers you up - ideally, one would drink to get hit with brute damage now to avoid alcohol problems later
 	quality = DRINK_VERYGOOD
 	taste_description = "a bitter SPIKE with a sour aftertaste"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1727,7 +1721,7 @@
 	name = "Sake"
 	description = "A sweet rice wine of questionable legality and extreme potency."
 	color = "#DDDDDD"
-	boozepwr = 70
+	boozepwr = 30
 	taste_description = "sweet rice wine"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	glass_price = DRINK_PRICE_STOCK
@@ -1737,7 +1731,7 @@
 	description = "This lightly alcoholic drink combines the benefits of menthol and cocoa."
 	color = "#45ca7a"
 	taste_description = "mint and chocolate"
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_GOOD
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1750,7 +1744,7 @@
 	name = "Alexander"
 	description = "Named after a Greek hero, this mix is said to embolden a user's shield as if they were in a phalanx."
 	color = "#F5E9D3"
-	boozepwr = 50
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "bitter, creamy cacao"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1781,7 +1775,7 @@
 	name = "Amaretto Alexander"
 	description = "A weaker version of the Alexander, what it lacks in strength it makes up for in flavor."
 	color = "#DBD5AE"
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "sweet, creamy cacao"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1790,7 +1784,7 @@
 	name = "Sidecar"
 	description = "The one ride you'll gladly give up the wheel for."
 	color = "#FFC55B"
-	boozepwr = 45
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "delicious freedom"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1800,7 +1794,7 @@
 	name = "Between the Sheets"
 	description = "A provocatively named classic. Funny enough, doctors recommend drinking it before taking a nap while underneath bedsheets."
 	color = "#F4C35A"
-	boozepwr = 55
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "seduction"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1835,7 +1829,7 @@
 	name = "Kamikaze"
 	description = "Divinely windy."
 	color = "#EEF191"
-	boozepwr = 60
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "divine windiness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1844,7 +1838,7 @@
 	name = "Mojito"
 	description = "A drink that looks as refreshing as it tastes."
 	color = "#DFFAD9"
-	boozepwr = 30
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "refreshing mint"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1854,7 +1848,7 @@
 	name = "Moscow Mule"
 	description = "A chilly drink that reminds you of the Derelict."
 	color = "#EEF1AA"
-	boozepwr = 30
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "refreshing spiciness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1863,7 +1857,7 @@
 	name = "Fernet"
 	description = "An incredibly bitter herbal liqueur used as a digestif."
 	color = "#1B2E24" // rgb: 27, 46, 36
-	boozepwr = 80
+	boozepwr = 40
 	taste_description = "utter bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1879,7 +1873,7 @@
 	name = "Fernet Cola"
 	description = "A very popular and bittersweet digestif, ideal after a heavy meal. Best served on a sawed-off cola bottle as per tradition."
 	color = "#390600" // rgb: 57, 6,
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "sweet relief"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1896,7 +1890,7 @@
 	name = "Fanciulli"
 	description = "What if the Manhattan cocktail ACTUALLY used a bitter herb liquour? Helps you sober up." //also causes a bit of stamina damage to symbolize the afterdrink lazyness
 	color = "#CA933F" // rgb: 202, 147, 63
-	boozepwr = -10
+	boozepwr = -20
 	quality = DRINK_NICE
 	taste_description = "a sweet sobering mix"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1916,7 +1910,7 @@
 	name = "Branca Menta"
 	description = "A refreshing mixture of bitter Fernet with mint creme liquour."
 	color = "#4B5746" // rgb: 75, 87, 70
-	boozepwr = 35
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "a bitter freshness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1951,8 +1945,8 @@
 /datum/reagent/consumable/ethanol/fruit_wine
 	name = "Fruit Wine"
 	description = "A wine made from grown plants."
-	color = COLOR_WHITE
-	boozepwr = 35
+	color = "#FFFFFF"
+	boozepwr = 15
 	quality = DRINK_GOOD
 	taste_description = "bad coding"
 	var/list/names = list("null fruit" = 1) //Names of the fruits used. Associative list where name is key, value is the percentage of that fruit.
@@ -2058,7 +2052,7 @@
 	name = "Champagne"
 	description = "A sparkling wine known for its ability to strike fast and hard."
 	color = "#ffffc1"
-	boozepwr = 40
+	boozepwr = 15
 	taste_description = "auspicious occasions and bad decisions"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	glass_price = DRINK_PRICE_EASY
@@ -2067,7 +2061,7 @@
 	name = "Wizz Fizz"
 	description = "A magical potion, fizzy and wild! However the taste, you will find, is quite mild."
 	color = "#4235d0" //Just pretend that the triple-sec was blue curacao.
-	boozepwr = 50
+	boozepwr = 20
 	quality = DRINK_GOOD
 	taste_description = "friendship! It is magic, after all"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2088,7 +2082,7 @@
 	name = "Bug Spray"
 	description = "A harsh, acrid, bitter drink, for those who need something to brace themselves."
 	color = "#33ff33"
-	boozepwr = 50
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "the pain of ten thousand slain mosquitos"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2128,7 +2122,7 @@
 	name = "Turbo"
 	description = "A turbulent cocktail associated with outlaw hoverbike racing. Not for the faint of heart."
 	color = "#e94c3a"
-	boozepwr = 85
+	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "the outlaw spirit"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2144,7 +2138,7 @@
 	name = "Old Timer"
 	description = "An archaic potation enjoyed by old coots of all ages."
 	color = "#996835"
-	boozepwr = 35
+	boozepwr = 40
 	quality = DRINK_NICE
 	taste_description = "simpler times"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2169,7 +2163,7 @@
 	name = "Rubberneck"
 	description = "A quality rubberneck should not contain any gross natural ingredients."
 	color = "#ffe65b"
-	boozepwr = 60
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "artifical fruityness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2179,7 +2173,7 @@
 	name = "Duplex"
 	description = "An inseparable combination of two fruity drinks."
 	color = "#50e5cf"
-	boozepwr = 25
+	boozepwr = 20
 	quality = DRINK_NICE
 	taste_description = "green apples and blue raspberries"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2188,7 +2182,7 @@
 	name = "Trappist Beer"
 	description = "A strong dark ale brewed by space-monks."
 	color = "#390c00"
-	boozepwr = 40
+	boozepwr = 5
 	quality = DRINK_VERYGOOD
 	taste_description = "dried plums and malt"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2204,7 +2198,7 @@
 /datum/reagent/consumable/ethanol/blazaam
 	name = "Blazaam"
 	description = "A strange drink that few people seem to remember existing. Doubles as a Berenstain remover."
-	boozepwr = 70
+	boozepwr = 40
 	quality = DRINK_FANTASTIC
 	taste_description = "alternate realities"
 	var/stored_teleports = 0
@@ -2224,14 +2218,14 @@
 /datum/reagent/consumable/ethanol/planet_cracker
 	name = "Planet Cracker"
 	description = "This jubilant drink celebrates humanity's triumph over the alien menace. May be offensive to non-human crewmembers."
-	boozepwr = 50
+	boozepwr = 20
 	quality = DRINK_FANTASTIC
 	taste_description = "triumph with a hint of bitterness"
 
 /datum/reagent/consumable/ethanol/mauna_loa
 	name = "Mauna Loa"
 	description = "Extremely hot; not for the faint of heart!"
-	boozepwr = 40
+	boozepwr = 30
 	color = "#fe8308" // 254, 131, 8
 	quality = DRINK_FANTASTIC
 	taste_description = "fiery, with an aftertaste of burnt flesh"
@@ -2258,7 +2252,7 @@
 /datum/reagent/consumable/ethanol/pina_colada
 	name = "Pina Colada"
 	description = "A fresh pineapple drink with coconut rum. Yum."
-	boozepwr = 40
+	boozepwr = 20
 	color = "#FFF1B2"
 	quality = DRINK_FANTASTIC
 	taste_description = "pineapple, coconut, and a hint of the ocean"
@@ -2289,7 +2283,7 @@
 	name = "Pruno"
 	color = "#E78108"
 	description = "Fermented prison wine made from fruit, sugar, and despair. Security loves to confiscate this, which is the only kind thing Security has ever done."
-	boozepwr = 85
+	boozepwr = 40
 	taste_description = "your tastebuds being individually shanked"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2300,7 +2294,7 @@
 /datum/reagent/consumable/ethanol/ginger_amaretto
 	name = "Ginger Amaretto"
 	description = "A delightfully simple cocktail that pleases the senses."
-	boozepwr = 30
+	boozepwr = 20
 	color = "#EFB42A"
 	quality = DRINK_GOOD
 	taste_description = "sweetness followed by a soft sourness and warmth"
@@ -2309,7 +2303,7 @@
 /datum/reagent/consumable/ethanol/godfather
 	name = "Godfather"
 	description = "A rough cocktail with illegal connections."
-	boozepwr = 50
+	boozepwr = 30
 	color = "#E68F00"
 	quality = DRINK_GOOD
 	taste_description = "a delightful softened punch"
@@ -2319,7 +2313,7 @@
 /datum/reagent/consumable/ethanol/godmother
 	name = "Godmother"
 	description = "A twist on a classic, liked more by mature women."
-	boozepwr = 50
+	boozepwr = 30
 	color = "#E68F00"
 	quality = DRINK_GOOD
 	taste_description = "sweetness and a zesty twist"
@@ -2328,7 +2322,7 @@
 /datum/reagent/consumable/ethanol/kortara
 	name = "Kortara"
 	description = "A sweet, milky nut-based drink enjoyed on Tizira. Frequently mixed with fruit juices and cocoa for extra refreshment."
-	boozepwr = 25
+	boozepwr = 5
 	color = "#EEC39A"
 	quality = DRINK_GOOD
 	taste_description = "sweet nectar"
@@ -2343,7 +2337,7 @@
 /datum/reagent/consumable/ethanol/sea_breeze
 	name = "Sea Breeze"
 	description = "Light and refreshing with a mint and cocoa hit- like mint choc chip ice cream you can drink!"
-	boozepwr = 15
+	boozepwr = 20
 	color = "#CFFFE5"
 	quality = DRINK_VERYGOOD
 	taste_description = "mint choc chip"
@@ -2356,7 +2350,7 @@
 /datum/reagent/consumable/ethanol/white_tiziran
 	name = "White Tiziran"
 	description = "A mix of vodka and kortara. The Lizard imbibes."
-	boozepwr = 65
+	boozepwr = 30
 	color = "#A68340"
 	quality = DRINK_GOOD
 	taste_description = "strikes and gutters"
@@ -2365,7 +2359,7 @@
 /datum/reagent/consumable/ethanol/drunken_espatier
 	name = "Drunken Espatier"
 	description = "Look, if you had to get into a shootout in the cold vacuum of space, you'd want to be drunk too."
-	boozepwr = 65
+	boozepwr = 30
 	color = "#A68340"
 	quality = DRINK_GOOD
 	taste_description = "sorrow"
@@ -2386,7 +2380,7 @@
 /datum/reagent/consumable/ethanol/protein_blend
 	name = "Protein Blend"
 	description = "A vile blend of protein, pure grain alcohol, korta flour, and blood. Useful for bulking up, if you can keep it down."
-	boozepwr = 65
+	boozepwr = 20
 	color = "#FF5B69"
 	quality = DRINK_NICE
 	taste_description = "regret"
@@ -2404,7 +2398,7 @@
 /datum/reagent/consumable/ethanol/mushi_kombucha
 	name = "Mushi Kombucha"
 	description = "A popular summer beverage on Tizira, made from sweetened mushroom tea."
-	boozepwr = 10
+	boozepwr = 5
 	color = "#C46400"
 	quality = DRINK_VERYGOOD
 	taste_description = "sweet 'shrooms"
@@ -2413,8 +2407,8 @@
 /datum/reagent/consumable/ethanol/triumphal_arch
 	name = "Triumphal Arch"
 	description = "A drink celebrating the Lizard Empire and its military victories. It's popular at bars on Unification Day."
-	boozepwr = 60
-	color = COLOR_GOLD
+	boozepwr = 40
+	color = "#FFD700"
 	quality = DRINK_FANTASTIC
 	taste_description = "victory"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2428,7 +2422,7 @@
 	name = "The Juice"
 	description = "Woah man, this like, feels familiar to you dude."
 	color = "#4c14be"
-	boozepwr = 50
+	boozepwr = 40
 	quality = DRINK_GOOD
 	taste_description = "like, the future, man"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2449,7 +2443,7 @@
 	name = "Ritual Wine"
 	description = "The dangerous, potent, alcoholic component of ritual wine."
 	color = rgb(35, 231, 25)
-	boozepwr = 90 //enjoy near death intoxication
+	boozepwr = 40 //enjoy near death intoxication
 	taste_mult = 6
 	taste_description = "concentrated herbs"
 
@@ -2480,7 +2474,7 @@
 /datum/reagent/consumable/ethanol/navy_rum //IN THE NAVY
 	name = "Navy Rum"
 	description = "Rum as the finest sailors drink."
-	boozepwr = 90 //the finest sailors are often drunk
+	boozepwr = 40 //the finest sailors are often drunk
 	color = "#d8e8f0"
 	quality = DRINK_NICE
 	taste_description = "a life on the waves"
@@ -2489,7 +2483,7 @@
 /datum/reagent/consumable/ethanol/bitters //why do they call them bitters, anyway? they're more spicy than anything else
 	name = "Andromeda Bitters"
 	description = "A bartender's best friend, often used to lend a delicate spiciness to any drink. Produced in New Trinidad, now and forever."
-	boozepwr = 70
+	boozepwr = 30
 	color = "#1c0000"
 	quality = DRINK_NICE
 	taste_description = "spiced alcohol"
@@ -2498,7 +2492,7 @@
 /datum/reagent/consumable/ethanol/admiralty //navy rum, vermouth, fernet
 	name = "Admiralty"
 	description = "A refined, bitter drink made with navy rum, vermouth and fernet."
-	boozepwr = 100
+	boozepwr = 40
 	color = "#1F0001"
 	quality = DRINK_VERYGOOD
 	taste_description = "haughty arrogance"
@@ -2507,7 +2501,7 @@
 /datum/reagent/consumable/ethanol/long_haul //Rum, Curacao, Sugar, dash of bitters, lengthened with soda water
 	name = "Long Haul"
 	description = "A favourite amongst freighter pilots, unscrupulous smugglers, and nerf herders."
-	boozepwr = 35
+	boozepwr = 30
 	color = "#003153"
 	quality = DRINK_VERYGOOD
 	taste_description = "companionship"
@@ -2516,7 +2510,7 @@
 /datum/reagent/consumable/ethanol/long_john_silver //navy rum, bitters, lemonade
 	name = "Long John Silver"
 	description = "A long drink of navy rum, bitters, and lemonade. Particularly popular aboard the Mothic Fleet as it's light on ration credits and heavy on flavour."
-	boozepwr = 50
+	boozepwr = 40
 	color = "#c4b35c"
 	quality = DRINK_VERYGOOD
 	taste_description = "rum and spices"
@@ -2525,7 +2519,7 @@
 /datum/reagent/consumable/ethanol/tropical_storm //dark rum, pineapple juice, triple citrus, curacao
 	name = "Tropical Storm"
 	description = "A taste of the Caribbean in one glass."
-	boozepwr = 40
+	boozepwr = 20
 	color = "#00bfa3"
 	quality = DRINK_VERYGOOD
 	taste_description = "the tropics"
@@ -2534,7 +2528,7 @@
 /datum/reagent/consumable/ethanol/dark_and_stormy //rum and ginger beer- simple and classic
 	name = "Dark and Stormy"
 	description = "A classic drink arriving to thunderous applause." //thank you, thank you, I'll be here forever
-	boozepwr = 50
+	boozepwr = 20
 	color = "#8c5046"
 	quality = DRINK_GOOD
 	taste_description = "ginger and rum"
@@ -2543,7 +2537,7 @@
 /datum/reagent/consumable/ethanol/salt_and_swell //navy rum, tochtause syrup, egg whites, dash of saline-glucose solution
 	name = "Salt and Swell"
 	description = "A bracing sour with an interesting salty taste."
-	boozepwr = 60
+	boozepwr = 20
 	color = "#b4abd0"
 	quality = DRINK_FANTASTIC
 	taste_description = "salt and spice"
@@ -2552,7 +2546,7 @@
 /datum/reagent/consumable/ethanol/tiltaellen //yoghurt, salt, vinegar
 	name = "Tiltällen"
 	description = "A lightly fermented yoghurt drink with salt and a light dash of vinegar. Has a distinct sour cheesy flavour."
-	boozepwr = 10
+	boozepwr = 5
 	color = "#F4EFE2"
 	quality = DRINK_NICE
 	taste_description = "sour cheesy yoghurt"
@@ -2561,7 +2555,7 @@
 /datum/reagent/consumable/ethanol/tich_toch
 	name = "Tich Toch"
 	description = "A mix of Tiltällen, Töchtaüse Syrup, and vodka. It's not exactly to everyones' tastes."
-	boozepwr = 75
+	boozepwr = 20
 	color = "#b4abd0"
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy sour cheesy yoghurt"
@@ -2570,7 +2564,7 @@
 /datum/reagent/consumable/ethanol/helianthus
 	name = "Helianthus"
 	description = "A dark yet radiant mixture of absinthe and hallucinogens. The choice of all true artists."
-	boozepwr = 75
+	boozepwr = 10
 	color = "#fba914"
 	quality = DRINK_VERYGOOD
 	taste_description = "golden memories"
@@ -2588,7 +2582,7 @@
 	description = "Plums turned into wine."
 	color = "#8a0421"
 	nutriment_factor = 1
-	boozepwr = 20
+	boozepwr = 10
 	taste_description = "a poet's love and undoing"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	glass_price = DRINK_PRICE_STOCK
@@ -2597,7 +2591,7 @@
 	name = "The Hat"
 	description = "A fancy drink, usually served in a man's hat."
 	color = "#b90a5c"
-	boozepwr = 80
+	boozepwr = 40
 	quality = DRINK_NICE
 	taste_description = "something perfumy"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2619,7 +2613,7 @@
 /datum/reagent/consumable/ethanol/wine_voltaic
 	name = "Voltaic Yellow Wine"
 	description = "Electrically charged wine. Recharges ethereals, but also nontoxic."
-	boozepwr = 30
+	boozepwr = 15
 	color = "#FFAA00"
 	taste_description = "static with a hint of sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2637,7 +2631,7 @@
 /datum/reagent/consumable/ethanol/telepole
 	name = "Telepole"
 	description = "A grounding rod in the form of a drink. Recharges ethereals, and gives temporary shock resistance."
-	boozepwr = 50
+	boozepwr = 40
 	color = "#b300ff"
 	quality = DRINK_NICE
 	taste_description = "the howling storm"
@@ -2657,7 +2651,7 @@
 /datum/reagent/consumable/ethanol/pod_tesla
 	name = "Pod Tesla"
 	description = "Ride the lightning!  Recharges ethereals, suppresses phobias, and gives strong temporary shock resistance."
-	boozepwr = 80
+	boozepwr = 40
 	color = "#00fbff"
 	quality = DRINK_FANTASTIC
 	taste_description = "victory, with a hint of insanity"
@@ -2694,7 +2688,7 @@
 /datum/reagent/consumable/ethanol/shochu
 	name = "Shochu"
 	description = "Also known as soju or baijiu, this drink is made from fermented rice, much like sake, but at a generally higher proof making it more similar to a true spirit."
-	boozepwr = 45
+	boozepwr = 30
 	color = "#DDDDDD"
 	quality = DRINK_NICE
 	taste_description = "stiff rice wine"
@@ -2712,7 +2706,7 @@
 /datum/reagent/consumable/ethanol/coconut_rum
 	name = "Coconut Rum"
 	description = "The distilled essence of the beach. Tastes like bleach-blonde hair and suncream."
-	boozepwr = 21
+	boozepwr = 20
 	color = "#F54040"
 	quality = DRINK_NICE
 	taste_description = "coconut rum"
@@ -2740,7 +2734,7 @@
 /datum/reagent/consumable/ethanol/banzai_ti
 	name = "Banzai-Tī"
 	description = "A variation on the Long Island Iced Tea, made with yuyake for an alternative flavour that's hard to place."
-	boozepwr = 40
+	boozepwr = 30
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "an asian twist on the liquor cabinet"
@@ -2749,7 +2743,7 @@
 /datum/reagent/consumable/ethanol/sanraizusoda
 	name = "Sanraizusōda"
 	description = "It's a melon cream soda, except with alcohol- what's not to love? Well... possibly the hangovers."
-	boozepwr = 6
+	boozepwr = 5
 	color = "#F54040"
 	quality = DRINK_GOOD
 	taste_description = "creamy melon soda"
@@ -2758,7 +2752,7 @@
 /datum/reagent/consumable/ethanol/kumicho
 	name = "Kumichō"
 	description = "A new take on a classic cocktail, the Kumicho takes the Godfather formula and adds shochu for an Asian twist."
-	boozepwr = 62
+	boozepwr = 30
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "rice and rye"
@@ -2767,7 +2761,7 @@
 /datum/reagent/consumable/ethanol/red_planet
 	name = "Red Planet"
 	description = "Made in celebration of the Martian Concession, the Red Planet is based on the classic El Presidente, and is as patriotic as it is bright crimson."
-	boozepwr = 45
+	boozepwr = 40
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "the spirit of freedom"
@@ -2776,7 +2770,7 @@
 /datum/reagent/consumable/ethanol/amaterasu
 	name = "Amaterasu"
 	description = "Named for Amaterasu, the Shinto Goddess of the Sun, this cocktail embodies radiance- or something like that, anyway."
-	boozepwr = 54 //1 part bitters is a lot
+	boozepwr = 30 //1 part bitters is a lot
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "sweet nectar of the gods"
@@ -2785,7 +2779,7 @@
 /datum/reagent/consumable/ethanol/nekomimosa
 	name = "Nekomimosa"
 	description = "An overly sweet cocktail, made with melon liqueur, melon juice, and champagne (which contains no melon, unfortunately)."
-	boozepwr = 17
+	boozepwr = 20
 	color = "#FF0C8D"
 	quality = DRINK_GOOD
 	taste_description = "MELON"
@@ -2794,7 +2788,7 @@
 /datum/reagent/consumable/ethanol/sentai_quencha //melon soda, triple citrus, shochu, blue curacao
 	name = "Sentai Quencha"
 	description = "Based on the galaxy-famous \"Kyūkyoku no Ninja Pawā Sentai\", the Sentai Quencha is a favourite at anime conventions and weeb bars."
-	boozepwr = 28
+	boozepwr = 10
 	color = "#F54040"
 	quality = DRINK_GOOD
 	taste_description = "ultimate ninja power"
@@ -2803,7 +2797,7 @@
 /datum/reagent/consumable/ethanol/bosozoku
 	name = "Bōsōzoku"
 	description = "A simple summer drink from Mars, made from a 1:1 mix of rice beer and lemonade."
-	boozepwr = 6
+	boozepwr = 3
 	color = "#F54040"
 	quality = DRINK_GOOD
 	taste_description = "bittersweet lemon"
@@ -2812,7 +2806,7 @@
 /datum/reagent/consumable/ethanol/ersatzche
 	name = "Ersatzche"
 	description = "Sweet, bitter, spicy- that's a great combination."
-	boozepwr = 6
+	boozepwr = 5
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy pineapple beer"
@@ -2821,7 +2815,7 @@
 /datum/reagent/consumable/ethanol/red_city_am
 	name = "Red City AM"
 	description = "A breakfast drink from New Osaka, for when you really need to get drunk at 9:30 in the morning in more socially acceptable manner than drinking bagwine on the bullet train. Not that you should drink this on the bullet train either."
-	boozepwr = 5 //this thing is fucking disgusting and both less tasty and less alcoholic than a bloody mary. it is against god and nature
+	boozepwr = 10 //this thing is fucking disgusting and both less tasty and less alcoholic than a bloody mary. it is against god and nature
 	color = "#F54040"
 	quality = DRINK_NICE
 	taste_description = "breakfast in a glass"
@@ -2830,7 +2824,7 @@
 /datum/reagent/consumable/ethanol/kings_ransom
 	name = "King's Ransom"
 	description = "A stiff, bitter drink with an odd name and odder recipe."
-	boozepwr = 26
+	boozepwr = 30
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "bitter raspberry"
@@ -2839,7 +2833,7 @@
 /datum/reagent/consumable/ethanol/four_bit
 	name = "Four Bit"
 	description = "A drink to power your typing hands."
-	boozepwr = 26
+	boozepwr = 20
 	color = "#F54040"
 	quality = DRINK_GOOD
 	taste_description = "cyberspace"
@@ -2848,7 +2842,7 @@
 /datum/reagent/consumable/ethanol/white_hawaiian //coconut milk, coconut rum, coffee liqueur
 	name = "White Hawaiian"
 	description = "A take on the classic White Russian, subbing out the classics for some tropical flavours."
-	boozepwr = 16
+	boozepwr = 20
 	color = "#F54040"
 	quality = DRINK_GOOD
 	taste_description = "COCONUT"
@@ -2866,7 +2860,7 @@
 /datum/reagent/consumable/ethanol/imperial_mai_tai //navy rum, rum, lime, triple sec, korta nectar
 	name = "Imperial Mai Tai"
 	description = "For when orgeat is in short supply, do as the spacers do- make do and mend."
-	boozepwr = 52
+	boozepwr = 40
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy nutty rum"
@@ -2885,7 +2879,7 @@
 /datum/reagent/consumable/ethanol/blue_hawaiian //pineapple juice, lemon juice, coconut rum, blue curacao
 	name = "Blue Hawaiian"
 	description = "Sweet, sharp and coconutty."
-	boozepwr = 30
+	boozepwr = 20
 	color = "#F54040"
 	quality = DRINK_VERYGOOD
 	taste_description = "the aloha state"
