@@ -1,0 +1,46 @@
+{
+	"version": 1,
+	"map_name": "Untitled Cat Server",
+	"map_path": "map_files/untitledcatserver",
+	"map_file": "untitledcatserver.dmm",
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"planetary": 1,
+	"ignored_unit_tests": [
+		"/datum/unit_test/cargo_dep_order_locations",
+		"/datum/unit_test/job_roundstart_spawnpoints",
+		"/datum/unit_test/required_map_items",
+		"/datum/unit_test/spy_bounty"
+	],
+	"shuttles": {
+		"cargo": "cargo_box"
+	},
+	"traits": [
+		{
+			"Up": true,
+			"Mining": true,
+			"Linkage": null,
+			"Gravity": true,
+			"Baseturf": "/turf/open/misc/sandy_dirt",
+			"No Parallax": true
+		},
+		{
+			"Down": true,
+			"Up": true,
+			"Mining": true,
+			"Linkage": null,
+			"Gravity": true,
+			"Baseturf": "/turf/open/misc/sandy_dirt",
+			"No Parallax": true
+		},
+		{
+			"Down": true,
+			"Mining": true,
+			"Linkage": null,
+			"Gravity": true,
+			"Weather_Snowstorm": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true
+		}
+	]
+}
