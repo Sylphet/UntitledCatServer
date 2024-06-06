@@ -13,13 +13,12 @@
 	outfit = /datum/outfit/job/chaplain
 	plasmaman_outfit = /datum/outfit/plasmaman/chaplain
 
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SRV
+	paycheck = PAYCHECK_LOWER
+	paycheck_department = ACCOUNT_CIV
 
 	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
-	departments_list = list(
-		/datum/job_department/service,
-		)
+
+	department_for_prefs = /datum/job_department/assistant
 
 	family_heirlooms = list(/obj/item/toy/windup_toolbox, /obj/item/reagent_containers/cup/glass/bottle/holywater)
 

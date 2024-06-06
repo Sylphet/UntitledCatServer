@@ -276,8 +276,6 @@
 /datum/id_trim/job/chaplain
 	assignment = "Chaplain"
 	trim_state = "trim_chaplain"
-	department_color = COLOR_SERVICE_LIME
-	subdepartment_color = COLOR_SERVICE_LIME
 	sechud_icon_state = SECHUD_CHAPLAIN
 	minimal_access = list(
 		ACCESS_CHAPEL_OFFICE,
@@ -476,8 +474,6 @@
 /datum/id_trim/job/curator
 	assignment = "Curator"
 	trim_state = "trim_curator"
-	department_color = COLOR_SERVICE_LIME
-	subdepartment_color = COLOR_SERVICE_LIME
 	sechud_icon_state = SECHUD_CURATOR
 	minimal_access = list(
 		ACCESS_AUX_BASE,

@@ -13,15 +13,14 @@
 	outfit = /datum/outfit/job/curator
 	plasmaman_outfit = /datum/outfit/plasmaman/curator
 
-	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SRV
+	paycheck = PAYCHECK_LOWER
+	paycheck_department = ACCOUNT_CIV
 
 	mind_traits = list(TRAIT_TOWER_OF_BABEL)
 
 	display_order = JOB_DISPLAY_ORDER_CURATOR
-	departments_list = list(
-		/datum/job_department/service,
-		)
+
+	department_for_prefs = /datum/job_department/assistant
 
 	mail_goodies = list(
 		/obj/item/book/random = 44,
