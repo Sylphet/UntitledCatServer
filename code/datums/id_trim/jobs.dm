@@ -693,8 +693,6 @@
 /datum/id_trim/job/lawyer
 	assignment = "Lawyer"
 	trim_state = "trim_lawyer"
-	department_color = COLOR_SERVICE_LIME
-	subdepartment_color = COLOR_SECURITY_RED
 	sechud_icon_state = SECHUD_LAWYER
 	minimal_access = list(
 		ACCESS_BRIG_ENTRANCE,

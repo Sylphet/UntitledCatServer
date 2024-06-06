@@ -60,7 +60,6 @@ export const DEPARTMENT2COLOR: Record<string, Department> = {
       'Cook',
       'Curator',
       'Janitor',
-      'Lawyer',
       'Mime',
       'Psychologist',
     ],

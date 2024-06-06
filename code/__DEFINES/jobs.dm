@@ -40,6 +40,7 @@
 
 //No department
 #define JOB_ASSISTANT "Assistant"
+#define JOB_LAWYER "Lawyer"
 #define JOB_PRISONER "Prisoner"
 //Command
 #define JOB_CAPTAIN "Captain"
@@ -90,7 +91,6 @@
 #define JOB_CLOWN "Clown"
 #define JOB_MIME "Mime"
 #define JOB_CURATOR "Curator"
-#define JOB_LAWYER "Lawyer"
 #define JOB_CHAPLAIN "Chaplain"
 #define JOB_PSYCHOLOGIST "Psychologist"
 //ERTs
