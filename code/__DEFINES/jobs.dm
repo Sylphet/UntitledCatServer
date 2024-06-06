@@ -38,9 +38,13 @@
  * and it will hurt the entire time
  */
 
-//No department
+//Assistants
 #define JOB_ASSISTANT "Assistant"
+#define JOB_CHAPLAIN "Chaplain"
+#define JOB_CURATOR "Curator"
+#define JOB_LAWYER "Lawyer"
 #define JOB_PRISONER "Prisoner"
+
 //Command
 #define JOB_CAPTAIN "Captain"
 #define JOB_HEAD_OF_PERSONNEL "Head of Personnel"
@@ -89,9 +93,6 @@
 #define JOB_JANITOR "Janitor"
 #define JOB_CLOWN "Clown"
 #define JOB_MIME "Mime"
-#define JOB_CURATOR "Curator"
-#define JOB_LAWYER "Lawyer"
-#define JOB_CHAPLAIN "Chaplain"
 #define JOB_PSYCHOLOGIST "Psychologist"
 //ERTs
 #define JOB_ERT_DEATHSQUAD "Death Commando"

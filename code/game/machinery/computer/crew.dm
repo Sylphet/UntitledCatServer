@@ -132,13 +132,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		JOB_CHEF = 62,
 		JOB_COOK = 63,
 		JOB_BOTANIST = 64,
-		JOB_CURATOR = 65,
-		JOB_CHAPLAIN = 66,
-		JOB_CLOWN = 67,
-		JOB_MIME = 68,
-		JOB_JANITOR = 69,
-		JOB_LAWYER = 71,
-		JOB_PSYCHOLOGIST = 72,
+		JOB_CLOWN = 65,
+		JOB_MIME = 66,
+		JOB_JANITOR = 67,
+		JOB_PSYCHOLOGIST = 68,
 		// 200-229: Centcom
 		JOB_CENTCOM_ADMIRAL = 200,
 		JOB_CENTCOM = 201,
@@ -158,6 +155,9 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		JOB_ERT_DEATHSQUAD = 227,
 
 		// ANYTHING ELSE = UNKNOWN_JOB_ID, Unknowns/custom jobs will appear after civilians, and before assistants
+		JOB_LAWYER = 901,
+		JOB_CURATOR = 902,
+		JOB_CHAPLAIN = 903,
 		JOB_ASSISTANT = 999,
 	)
 
