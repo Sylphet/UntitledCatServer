@@ -292,3 +292,32 @@
 /area/icemoon/underground/explored // ruins can't spawn here
 	name = "Icemoon Underground"
 	area_flags = UNIQUE_AREA
+
+
+/**********************Solace Areas**************************/
+
+/area/solace
+	icon = 'icons/area/areas_station.dmi'
+	icon_state = "mining"
+	has_gravity = STANDARD_GRAVITY
+	flags_1 = NONE
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	ambience_index = AMBIENCE_ICEMOON
+	sound_environment = SOUND_AREA_ICEMOON
+	ambient_buzz = 'sound/ambience/magma.ogg'
+
+/area/solace/surface
+	name = "Solace"
+	icon_state = "explored"
+	always_unpowered = TRUE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
+
+/area/solace/surface/outdoors // parent that defines if something is on the exterior of the station.
+	name = "Solace Wastes"
+	outdoors = TRUE
