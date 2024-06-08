@@ -8,7 +8,7 @@
 	spawn_positions = 0
 	supervisors = "the Captain, and in non-Bridge related situations the other heads"
 	minimal_player_age = 7
-	exp_requirements = 300
+	exp_requirements = 0
 	exp_required_type = EXP_TYPE_CREW
 	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "BRIDGE_ASSISTANT"
