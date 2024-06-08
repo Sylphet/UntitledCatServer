@@ -9,6 +9,7 @@ GLOBAL_LIST_EMPTY(ec_glass) //Global list of all EC Glass windows, used in signa
 	name = "electrochromic glass window"
 	desc = "A window made of reinforced electrochromic glass. Tints itself via the application of high-voltage electricity and un-tints with low voltages."
 	icon = TRANSPARENT_ICON
+	icon_state = "ec_glass-0"
 	base_icon_state = TRANSPARENT_ICON_BASE
 	///ID used by buttons to determine which EC glass window to affect
 	var/id = 1
@@ -26,6 +27,7 @@ GLOBAL_LIST_EMPTY(ec_glass) //Global list of all EC Glass windows, used in signa
 /obj/structure/window/reinforced/fulltile/ec_glass/darkened
 	opacity = TRUE
 	icon = OPAQUE_ICON
+	icon_state = "ec_glass_tinted-0"
 	base_icon_state = OPAQUE_ICON_BASE
 
 ///Proc to tint the glass, toggles it's state and is determined by the opacity
@@ -67,7 +69,7 @@ GLOBAL_LIST_EMPTY(ec_glass) //Global list of all EC Glass windows, used in signa
 	cooldown = TRUE
 	for(var/obj/structure/window/reinforced/fulltile/ec_glass/window in GLOB.ec_glass)
 		if (window.id == src.id)
-			INVOKE_ASYNC(window, /obj/structure/window/reinforced/fulltile/ec_glass.proc/toggle_tint)
+			INVOKE_ASYNC(window, TYPE_PROC_REF(/obj/structure/window/reinforced/fulltile/ec_glass, toggle_tint))
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 30)
 
 #undef TRANSPARENT_ICON
