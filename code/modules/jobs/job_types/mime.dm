@@ -12,7 +12,7 @@
 	outfit = /datum/outfit/job/mime
 	plasmaman_outfit = /datum/outfit/plasmaman/mime
 
-	paycheck = PAYCHECK_CREW
+	paycheck = PAYCHECK_LOWER
 	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_MIME

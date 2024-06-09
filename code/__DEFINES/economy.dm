@@ -9,7 +9,7 @@
 ///Default paygrade for the Unassigned Job/Unpaid job assignments.
 #define PAYCHECK_ZERO 0
 ///Paygrade for Prisoners and Assistants.
-#define PAYCHECK_LOWER 25
+#define PAYCHECK_LOWER 40
 ///Paygrade for all regular crew not belonging to PAYGRADE_LOWER or PAYGRADE_COMMAND.
 #define PAYCHECK_CREW 50
 ///Paygrade for Heads of Staff.

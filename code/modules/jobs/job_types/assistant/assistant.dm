@@ -15,14 +15,15 @@ Assistant
 	outfit = /datum/outfit/job/assistant
 	plasmaman_outfit = /datum/outfit/plasmaman
 
-	paycheck = PAYCHECK_LOWER // Get a job. Job reassignment changes your paycheck now. Get over it.
-	paycheck_department = ACCOUNT_CIV
+	paycheck = PAYCHECK_ZERO
+	paycheck_department = ACCOUNT_SRV
 
 	liver_traits = list(TRAIT_MAINTENANCE_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
-
-	department_for_prefs = /datum/job_department/assistant
+	departments_list = list(
+		/datum/job_department/service,
+		)
 
 	family_heirlooms = list(/obj/item/storage/toolbox/mechanical/old/heirloom, /obj/item/clothing/gloves/cut/heirloom)
 
