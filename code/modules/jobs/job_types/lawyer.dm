@@ -14,13 +14,14 @@
 	plasmaman_outfit = /datum/outfit/plasmaman/bar
 
 	paycheck = PAYCHECK_LOWER
-	paycheck_department = ACCOUNT_CIV
-
-	department_for_prefs = /datum/job_department/assistant
+	paycheck_department = ACCOUNT_SRV
 
 	liver_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_LAWYER
+	departments_list = list(
+		/datum/job_department/service,
+		)
 
 	rpg_title = "Magistrate"
 	family_heirlooms = list(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
