@@ -835,14 +835,14 @@
 /datum/id_trim/job/psychologist
 	assignment = "Psychologist"
 	trim_state = "trim_psychologist"
-	department_color = COLOR_SERVICE_LIME
+	department_color = COLOR_MEDICAL_BLUE
 	subdepartment_color = COLOR_MEDICAL_BLUE
 	sechud_icon_state = SECHUD_PSYCHOLOGIST
 	minimal_access = list(
 		ACCESS_MEDICAL,
 		ACCESS_MINERAL_STOREROOM,
 		ACCESS_PSYCHOLOGY,
-		ACCESS_SERVICE,
+		ACCESS_PHARMACY,
 	)
 	extra_access = list(
 		ACCESS_MORGUE,

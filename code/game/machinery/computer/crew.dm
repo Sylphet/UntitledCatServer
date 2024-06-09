@@ -112,6 +112,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		JOB_MEDICAL_DOCTOR = 22,
 		JOB_PARAMEDIC = 23,
 		JOB_CORONER = 24,
+		JOB_PSYCHOLOGIST = 25,
 		// 30-39: Science
 		JOB_RESEARCH_DIRECTOR = 30,
 		JOB_SCIENTIST = 31,
@@ -138,7 +139,6 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		JOB_JANITOR = 68,
 		JOB_LAWYER = 69,
 		JOB_MIME = 71,
-		JOB_PSYCHOLOGIST = 72,
 		JOB_ASSISTANT = 99,
 		// 200-229: Centcom
 		JOB_CENTCOM_ADMIRAL = 200,
