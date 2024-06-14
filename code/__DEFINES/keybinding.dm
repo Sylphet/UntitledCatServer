@@ -36,6 +36,7 @@
 #define COMSIG_KB_CLIENT_OOC_DOWN "keybinding_client_ooc_down"
 
 //Human
+#define COSMIG_KB_HUMAN_QUICKDROP_BACKPACK "keybinding_human_quickdrop_backpack"
 #define COMSIG_KB_HUMAN_QUICKEQUIP_DOWN "keybinding_human_quickequip_down"
 #define COMSIG_KB_HUMAN_QUICKEQUIPBELT_DOWN "keybinding_human_quickequipbelt_down"
 #define COMSIG_KB_HUMAN_BAGEQUIP_DOWN "keybinding_human_bagequip_down"
