@@ -8,7 +8,7 @@
 /datum/keybinding/human/quickdrop_backpack
 	hotkey_keys = list("AltQ")
 	name = "quickdrop_backpack"
-	full_name = "Quickdrop backpack"
+	full_name = "Backpack quickdrop" //I switched it just to mess with you hehe
 	description = "Quickly takes off your bag and drops it on the floor"
 	keybind_signal = COSMIG_KB_HUMAN_QUICKDROP_BACKPACK
 
