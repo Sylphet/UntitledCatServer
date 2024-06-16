@@ -8,7 +8,7 @@
 	spawn_positions = 0
 	supervisors = "the Captain, Research Director, and your lawset"
 	minimal_player_age = 7
-	exp_requirements = 180
+	exp_requirements = 0
 	exp_required_type = EXP_TYPE_CREW
 	exp_required_type_department = EXP_TYPE_SILICON
 	exp_granted_type = EXP_TYPE_CREW

@@ -1,8 +1,7 @@
 /datum/job/psychologist
 	title = JOB_PSYCHOLOGIST
-	description = "Advocate sanity, self-esteem, and teamwork in a station \
-		staffed with headcases."
-	department_head = list(JOB_HEAD_OF_PERSONNEL)
+	description = "Attend to the mental health needs of the station: offer an unprejudiced ear, prescribe medication, stave off isolation and loneliness."
+	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -14,13 +13,13 @@
 	plasmaman_outfit = /datum/outfit/plasmaman/psychologist
 
 	paycheck = PAYCHECK_CREW
-	paycheck_department = ACCOUNT_SRV
+	paycheck_department = ACCOUNT_MED
 
 	liver_traits = list(TRAIT_MEDICAL_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_PSYCHOLOGIST
 	departments_list = list(
-		/datum/job_department/service,
+		/datum/job_department/medical,
 		)
 
 	family_heirlooms = list(/obj/item/storage/pill_bottle)

@@ -79,6 +79,8 @@
 /datum/id_trim/job/assistant
 	assignment = "Assistant"
 	trim_state = "trim_assistant"
+	department_color = COLOR_SERVICE_LIME
+	subdepartment_color = COLOR_SERVICE_LIME
 	intern_alt_name = "Intern"
 	sechud_icon_state = SECHUD_ASSISTANT
 	minimal_access = list()
@@ -276,6 +278,8 @@
 /datum/id_trim/job/chaplain
 	assignment = "Chaplain"
 	trim_state = "trim_chaplain"
+	department_color = COLOR_SERVICE_LIME
+	subdepartment_color = COLOR_SERVICE_LIME
 	sechud_icon_state = SECHUD_CHAPLAIN
 	minimal_access = list(
 		ACCESS_CHAPEL_OFFICE,
@@ -474,6 +478,8 @@
 /datum/id_trim/job/curator
 	assignment = "Curator"
 	trim_state = "trim_curator"
+	department_color = COLOR_SERVICE_LIME
+	subdepartment_color = COLOR_SERVICE_LIME
 	sechud_icon_state = SECHUD_CURATOR
 	minimal_access = list(
 		ACCESS_AUX_BASE,
@@ -689,6 +695,8 @@
 /datum/id_trim/job/lawyer
 	assignment = "Lawyer"
 	trim_state = "trim_lawyer"
+	department_color = COLOR_SERVICE_LIME
+	subdepartment_color = COLOR_SERVICE_LIME
 	sechud_icon_state = SECHUD_LAWYER
 	minimal_access = list(
 		ACCESS_BRIG_ENTRANCE,
@@ -827,14 +835,14 @@
 /datum/id_trim/job/psychologist
 	assignment = "Psychologist"
 	trim_state = "trim_psychologist"
-	department_color = COLOR_SERVICE_LIME
+	department_color = COLOR_MEDICAL_BLUE
 	subdepartment_color = COLOR_MEDICAL_BLUE
 	sechud_icon_state = SECHUD_PSYCHOLOGIST
 	minimal_access = list(
 		ACCESS_MEDICAL,
 		ACCESS_MINERAL_STOREROOM,
 		ACCESS_PSYCHOLOGY,
-		ACCESS_SERVICE,
+		ACCESS_PHARMACY,
 	)
 	extra_access = list(
 		ACCESS_MORGUE,

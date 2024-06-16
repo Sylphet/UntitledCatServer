@@ -12,7 +12,7 @@
 	outfit = /datum/outfit/job/clown
 	plasmaman_outfit = /datum/outfit/plasmaman/clown
 
-	paycheck = PAYCHECK_CREW
+	paycheck = PAYCHECK_LOWER
 	paycheck_department = ACCOUNT_SRV
 
 	mind_traits = list(TRAIT_NAIVE)

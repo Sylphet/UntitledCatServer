@@ -118,9 +118,6 @@
 	icon_state = "labor_camp_security"
 	ambience_index = AMBIENCE_DANGER
 
-
-
-
 /**********************Lavaland Areas**************************/
 
 /area/lavaland
@@ -183,8 +180,6 @@
 /area/lavaland/surface/outdoors/explored
 	name = "Lavaland Labor Camp"
 	area_flags = VALID_TERRITORY | UNIQUE_AREA
-
-
 
 /**********************Ice Moon Areas**************************/
 
@@ -292,8 +287,6 @@
 /area/icemoon/underground/explored // ruins can't spawn here
 	name = "Icemoon Underground"
 	area_flags = UNIQUE_AREA
-
-
 
 /**********************Solace Areas**************************/
 
@@ -422,22 +415,3 @@
 		new /obj/effect/decal/remains/human(loc)
 		to_chat(carbon_target, span_abductor("You have been eaten by a grue."))
 
-
-
-
-
-/*
-///Prevents entry to a certain area if it has flags preventing virtual entities from entering.
-/datum/component/virtual_entity/proc/on_parent_pre_move(atom/movable/source, atom/new_location)
-	SIGNAL_HANDLER
-
-	var/area/location_area = get_area(new_location)
-	if(!location_area)
-		stack_trace("Virtual entity entered a location with no area!")
-		return
-
-	if(location_area.area_flags & VIRTUAL_SAFE_AREA)
-		source.balloon_alert(source, "out of bounds!")
-		COOLDOWN_START(src, OOB_cooldown, 2 SECONDS)
-		return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
-*/

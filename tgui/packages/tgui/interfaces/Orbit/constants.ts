@@ -39,6 +39,7 @@ export const DEPARTMENT2COLOR: Record<string, Department> = {
       'Coroner',
       'Medical Doctor',
       'Paramedic',
+      'Psychologist',
     ],
   },
   science: {
@@ -54,12 +55,14 @@ export const DEPARTMENT2COLOR: Record<string, Department> = {
     trims: [
       'Bartender',
       'Botanist',
+      'Chaplain',
       'Chef',
       'Clown',
       'Cook',
+      'Curator',
       'Janitor',
+      'Lawyer',
       'Mime',
-      'Psychologist',
     ],
   },
 };

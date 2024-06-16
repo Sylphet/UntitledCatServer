@@ -5,6 +5,24 @@
 /datum/keybinding/human/can_use(client/user)
 	return ishuman(user.mob)
 
+/datum/keybinding/human/quickdrop_backpack
+	hotkey_keys = list("AltQ")
+	name = "quickdrop_backpack"
+	full_name = "Backpack quickdrop" //I switched it just to mess with you hehe
+	description = "Quickly takes off your bag and drops it on the floor"
+	keybind_signal = COSMIG_KB_HUMAN_QUICKDROP_BACKPACK
+
+/datum/keybinding/human/quickdrop_backpack/down(client/user)
+	. = ..()
+	var/mob/M = user.mob
+	var/obj/item/storage/backpack = M.get_item_by_slot(ITEM_SLOT_BACK)
+	if(!istype(backpack, /obj/item/storage))
+		to_chat(user, span_warning("You aren't wearing a backpack."))
+	else
+		playsound(M.loc, 'sound/items/handling/cloth_drop.ogg', 20, TRUE)
+		user.mob.dropItemToGround(M.get_item_by_slot(ITEM_SLOT_BACK))
+	return
+
 /datum/keybinding/human/quick_equip
 	hotkey_keys = list("E")
 	name = "quick_equip"
