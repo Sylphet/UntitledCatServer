@@ -25,7 +25,8 @@
 			"Gravity": true,
 			"Baseturf": "/turf/open/openspace",
 			"Linkage": null,
-			"No Parallax": true
+			"No Parallax": true,
+			"Weather_Rainstorm": true
 		}
 	],
 	"minetype": "none"

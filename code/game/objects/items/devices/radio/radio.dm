@@ -340,6 +340,11 @@
 	if(is_within_radio_jammer_range(src) && !syndie)
 		return
 
+	var/area/source_area = get_area(src)
+	if(ispath(source_area, /area/solace/grueterritory))
+		to_chat(talking_movable, span_notice("You listen for a moment, but the only reply you receive is a faint crackling..."))
+		return
+
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, talking_movable, src)
 

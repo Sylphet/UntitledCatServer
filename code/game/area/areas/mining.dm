@@ -294,15 +294,12 @@
 	icon = 'icons/area/areas_station.dmi'
 	icon_state = "mining"
 	has_gravity = STANDARD_GRAVITY
-	flags_1 = NONE
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED
-	ambience_index = AMBIENCE_ICEMOON
 	sound_environment = SOUND_ENVIRONMENT_PARKING_LOT
-
+	ambient_buzz = null
 	base_lighting_alpha = 0
-	var/gruetimer
-	var/grueattack
-	var/timing_id
+	var/gruetimer // sets the timer
+	var/grueattack // is the timer
 
 /area/solace/surface
 	name = "Icemoon"
@@ -313,15 +310,12 @@
 	power_light = FALSE
 	requires_power = TRUE
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
-	forced_ambience = TRUE
-	ambient_buzz = 'sound/ambience/ambiwind.ogg'
-	ambient_buzz_vol = 100
 
 /area/solace/surface/outdoors // parent that defines if something is on the exterior of the station.
 	name = "Icemoon Wastes"
 	outdoors = TRUE
+	ambient_buzz = 'sound/ambience/ambiwind.ogg'
+	forced_ambience = TRUE
 
 /area/solace/underground
 	name = "Icemoon Caves"
@@ -348,37 +342,29 @@
 	power_equip = FALSE
 	power_light = FALSE
 	requires_power = TRUE
-	area_flags = UNIQUE_AREA | FLORA_ALLOWED | GRUE_TERRITORY
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED
 	min_ambience_cooldown = 70 SECONDS
 	max_ambience_cooldown = 220 SECONDS
-	ambient_buzz = 'sound/ambience/ambiwind_grue.ogg'
+	var/disrupt_duration = 15 SECONDS
 
 /area/solace/grueterritory/level_1
 	icon_state = "grue_1"
 	gruetimer = 120 SECONDS
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	mood_bonus = -2
-	mood_message = "Something isn't right about this place..."
 
 /area/solace/grueterritory/level_2
 	icon_state = "grue_2"
 	gruetimer = 45 SECONDS
-	mood_bonus = -5
-	mood_message = "I really, really want to get out of here."
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 
 /area/solace/grueterritory/level_3
 	icon_state = "grue_3"
 	gruetimer = 10 SECONDS
-	mood_bonus = -10
-	mood_message = "Something terrible is going to happen, I know it!"
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
 
 /area/solace/grueterritory/level_4
 	icon_state = "grue_4"
-	gruetimer = 1 SECONDS
-	mood_bonus = -20
-	mood_message = "It was inevitable."
+	gruetimer = null
 	sound_environment = SOUND_ENVIRONMENT_UNDERWATER
 
 // procs
@@ -388,30 +374,32 @@
 	for(var/mob/living/enterer as anything in arrived.get_all_contents_type(/mob/living))
 		var/area/solace/grueterritory/current = get_area(enterer)
 		if(istype(current, /area/solace/grueterritory/level_1))
-			to_chat(enterer, span_notice("The darkness seems thicker here, and it makes your hair stand on end."))
+			playsound(enterer, 'sound/effects/common.ogg', 100, TRUE, -1)
+			to_chat(enterer, span_notice("Your radio begins to crackle softly as a strange stillness washes over your surroundings."))
 		if(istype(current, /area/solace/grueterritory/level_2))
+			enterer.adjust_bodytemperature(-15)
 			to_chat(enterer, span_warning("The air grows colder, and you feel eyes in the back of your head..."))
 		if(istype(current, /area/solace/grueterritory/level_3))
 			to_chat(enterer, span_danger("Your heart pounds in your chest, and you feel that you are in mortal danger!"))
+		if(istype(current, /area/solace/grueterritory/level_4))
+			to_chat(enterer, span_narsiesmall("Everything goes dark."))
+			INVOKE_ASYNC(usr, TYPE_PROC_REF(/mob/living/carbon/human,eaten_by_grue), enterer)
 
-		grueattack = addtimer(CALLBACK(usr, TYPE_PROC_REF(/mob/living/carbon/human,eaten_by_grue), enterer), gruetimer)
+		grueattack = addtimer(CALLBACK(usr, TYPE_PROC_REF(/mob/living/carbon/human,eaten_by_grue), enterer), gruetimer, TIMER_UNIQUE | TIMER_STOPPABLE)
 
 /area/solace/grueterritory/Exited(atom/movable/gone, area/old_area)
 	. = ..()
 	for(var/mob/living/exiter as anything in gone.get_all_contents_type(/mob/living))
 		var/area/solace/grueterritory/currentexit = get_area(gone)
-		if(!istype(currentexit, /area/solace/grueterritory))
+		if(!ispath(currentexit,/area/solace/grueterritory))
 			to_chat(exiter, span_notice("You feel lighter as you leave that place behind you."))
-			deltimer(usr)
+			deltimer(grueattack)
 			grueattack = null
 
 /mob/living/carbon/human/proc/eaten_by_grue(mob/living/target)
 	var/mob/living/carbon/carbon_target = target
-	if(istype(carbon_target, /area/solace/grueterritory/level_4))
-		for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
-			carbon_target.cause_wound_of_type_and_severity(WOUND_BLUNT, limb, WOUND_SEVERITY_CRITICAL)
-			to_chat(carbon_target, span_narsiesmall("Everything goes dark."))
-		gib()
-		new /obj/effect/decal/remains/human(loc)
-		to_chat(carbon_target, span_abductor("You have been eaten by a grue."))
+	for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
+		carbon_target.cause_wound_of_type_and_severity(WOUND_BLUNT, limb, WOUND_SEVERITY_CRITICAL)
+	to_chat(carbon_target, span_abductor("You have been eaten by a grue."))
+	gib(DROP_ALL_REMAINS)
 
