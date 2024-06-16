@@ -1,0 +1,32 @@
+{
+	"version": 1,
+	"map_name": "SolaceStation",
+	"map_path": "map_files/SolaceStation",
+	"map_file": "SolaceStation.dmm",
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"planetary": 1,
+	"shuttles": {
+		"cargo": "cargo_box",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_box",
+		"emergency": "emergency_box"
+	},
+	"traits": [
+		{
+			"Up": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/misc/asteroid/basalt",
+			"Linkage": null,
+			"No Parallax": true
+		},
+		{
+			"Down": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace",
+			"Linkage": null,
+			"No Parallax": true
+		}
+	],
+	"minetype": "none"
+}

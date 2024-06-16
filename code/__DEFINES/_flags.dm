@@ -131,6 +131,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define QUIET_LOGS (1<<16)
 /// This area does not allow virtual entities to enter.
 #define VIRTUAL_SAFE_AREA (1<<17)
+/// This area is inhabited by grues that kill a player that stays in it too long.
+#define GRUE_TERRITORY (1<<18)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask

@@ -292,3 +292,152 @@
 /area/icemoon/underground/explored // ruins can't spawn here
 	name = "Icemoon Underground"
 	area_flags = UNIQUE_AREA
+
+
+
+/**********************Solace Areas**************************/
+
+/area/solace
+	icon = 'icons/area/areas_station.dmi'
+	icon_state = "mining"
+	has_gravity = STANDARD_GRAVITY
+	flags_1 = NONE
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	ambience_index = AMBIENCE_ICEMOON
+	sound_environment = SOUND_ENVIRONMENT_PARKING_LOT
+
+	base_lighting_alpha = 0
+	var/gruetimer
+	var/grueattack
+	var/timing_id
+
+/area/solace/surface
+	name = "Icemoon"
+	icon_state = "explored"
+	always_unpowered = TRUE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
+	forced_ambience = TRUE
+	ambient_buzz = 'sound/ambience/ambiwind.ogg'
+	ambient_buzz_vol = 100
+
+/area/solace/surface/outdoors // parent that defines if something is on the exterior of the station.
+	name = "Icemoon Wastes"
+	outdoors = TRUE
+
+/area/solace/underground
+	name = "Icemoon Caves"
+	outdoors = TRUE
+	always_unpowered = TRUE
+	requires_power = TRUE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
+
+// grue territory, if you stay in there for too long you die, soft map edge kinda deal
+
+	// outdoors
+
+/area/solace/grueterritory
+	name = "Icemoon Wastes"
+	icon_state = "explored"
+	outdoors = TRUE
+	always_unpowered = TRUE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	area_flags = UNIQUE_AREA | FLORA_ALLOWED | GRUE_TERRITORY
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
+	ambient_buzz = 'sound/ambience/ambiwind_grue.ogg'
+
+/area/solace/grueterritory/level_1
+	icon_state = "grue_1"
+	gruetimer = 120 SECONDS
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	mood_bonus = -2
+	mood_message = "Something isn't right about this place..."
+
+/area/solace/grueterritory/level_2
+	icon_state = "grue_2"
+	gruetimer = 45 SECONDS
+	mood_bonus = -5
+	mood_message = "I really, really want to get out of here."
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+
+/area/solace/grueterritory/level_3
+	icon_state = "grue_3"
+	gruetimer = 10 SECONDS
+	mood_bonus = -10
+	mood_message = "Something terrible is going to happen, I know it!"
+	sound_environment = SOUND_ENVIRONMENT_STONEROOM
+
+/area/solace/grueterritory/level_4
+	icon_state = "grue_4"
+	gruetimer = 1 SECONDS
+	mood_bonus = -20
+	mood_message = "It was inevitable."
+	sound_environment = SOUND_ENVIRONMENT_UNDERWATER
+
+// procs
+
+/area/solace/grueterritory/Entered(atom/movable/arrived, area/old_area)
+	. = ..()
+	for(var/mob/living/enterer as anything in arrived.get_all_contents_type(/mob/living))
+		var/area/solace/grueterritory/current = get_area(enterer)
+		if(istype(current, /area/solace/grueterritory/level_1))
+			to_chat(enterer, span_notice("The darkness seems thicker here, and it makes your hair stand on end."))
+		if(istype(current, /area/solace/grueterritory/level_2))
+			to_chat(enterer, span_warning("The air grows colder, and you feel eyes in the back of your head..."))
+		if(istype(current, /area/solace/grueterritory/level_3))
+			to_chat(enterer, span_danger("Your heart pounds in your chest, and you feel that you are in mortal danger!"))
+
+		grueattack = addtimer(CALLBACK(usr, TYPE_PROC_REF(/mob/living/carbon/human,eaten_by_grue), enterer), gruetimer)
+
+/area/solace/grueterritory/Exited(atom/movable/gone, area/old_area)
+	. = ..()
+	for(var/mob/living/exiter as anything in gone.get_all_contents_type(/mob/living))
+		var/area/solace/grueterritory/currentexit = get_area(gone)
+		if(!istype(currentexit, /area/solace/grueterritory))
+			to_chat(exiter, span_notice("You feel lighter as you leave that place behind you."))
+			deltimer(usr)
+			grueattack = null
+
+/mob/living/carbon/human/proc/eaten_by_grue(mob/living/target)
+	var/mob/living/carbon/carbon_target = target
+	if(istype(carbon_target, /area/solace/grueterritory/level_4))
+		for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
+			carbon_target.cause_wound_of_type_and_severity(WOUND_BLUNT, limb, WOUND_SEVERITY_CRITICAL)
+			to_chat(carbon_target, span_narsiesmall("Everything goes dark."))
+		gib()
+		new /obj/effect/decal/remains/human(loc)
+		to_chat(carbon_target, span_abductor("You have been eaten by a grue."))
+
+
+
+
+
+/*
+///Prevents entry to a certain area if it has flags preventing virtual entities from entering.
+/datum/component/virtual_entity/proc/on_parent_pre_move(atom/movable/source, atom/new_location)
+	SIGNAL_HANDLER
+
+	var/area/location_area = get_area(new_location)
+	if(!location_area)
+		stack_trace("Virtual entity entered a location with no area!")
+		return
+
+	if(location_area.area_flags & VIRTUAL_SAFE_AREA)
+		source.balloon_alert(source, "out of bounds!")
+		COOLDOWN_START(src, OOB_cooldown, 2 SECONDS)
+		return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+*/
